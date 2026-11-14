@@ -1,0 +1,10 @@
+{
+  "name": "trece-martires-donations-record",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Donations and volunteers record for Trece Martires Elementary School, Casiguran, Sorsogon",
+  "dependencies": {
+    "@netlify/database": "2.0.1"
+  }
+}
