@@ -1,0 +1,1660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trece Martires Partnerships Record</title>
+<meta name="description" content="Monthly record of donations and volunteers of Trece Martires Elementary School, Casiguran, Sorsogon">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: a formal partnerships ledger in deep green and gold. Welcome page pairs a school-details panel with the sign-in card.
+   Earlier note: a formal monthly ledger. Header with seal and tabs (Monthly Record / Year Summary / Volunteers & Donors);
+   the month navigator drives totals, records and "who helped". Large type and big controls for older users. */
+:root {
+  --paper: #F6F4EE;
+  --surface: #FFFFFF;
+  --ink: #1E2A24;
+  --muted: #5B655F;
+  --line: #DDD8CB;
+  --field-line: #C3BDAD;
+  --accent: #1F4D3A;
+  --accent-deep: #173B2C;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E7EFEA;
+  --gold: #C29A3F;
+  --gold-light: #E9CF8E;
+  --good: #2E6B5E;
+  --good-soft: #E3F0EC;
+  --bad: #A3313D;
+  --bad-soft: #F8E8EA;
+  --warn: #7D5C1E;
+  --warn-soft: #F6EEDB;
+  --shadow: 0 10px 28px rgba(20, 40, 30, .12);
+  --f-display: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  --f-body: "Source Sans 3", "Segoe UI", Arial, system-ui, -apple-system, sans-serif;
+  --r: 6px;
+  color-scheme: light;
+}
+html, body { height: 100%; }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #5B8BD0; outline-offset: 2px; }
+input, select, textarea { font: inherit; font-size: 18px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--field-line); border-radius: var(--r); padding: 10px 14px; min-height: 52px; width: 100%; min-width: 0; }
+textarea { min-height: 76px; }
+label { font-size: 16px; font-weight: 700; color: var(--ink); }
+label em { font-weight: 400; font-style: normal; color: var(--muted); }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 8px 18px; border-radius: var(--r); border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); font-weight: 600; font-size: 17px; }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { filter: brightness(1.15); }
+.btn-big { min-height: 60px; font-size: 19px; padding: 12px 24px; }
+.btn-danger { color: var(--bad); border-color: var(--bad); background: transparent; }
+.btn-danger.armed { background: var(--bad); color: #fff; }
+.btn-link { border: 0; background: none; padding: 0; color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+/* header: green band with seal, gold rule, pill tabs; light toolbar beneath */
+.masthead { background: var(--surface); }
+.band { background: var(--accent); color: #fff; border-bottom: 4px solid var(--gold); }
+.band-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px 14px; }
+.brand { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.brand > div { min-width: 0; }
+.seal { width: 78px; height: 78px; flex: none; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--accent), 0 0 0 5px var(--gold); }
+.eyebrow { font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-light); margin: 0 0 4px; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(24px, 3.6vw, 34px); line-height: 1.15; margin: 0; color: #fff; text-wrap: balance; }
+.facts-line { margin: 6px 0 0; font-size: 15px; color: #D7E4DC; }
+.head-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.band .textsize { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .25); }
+.band .textsize > span { color: #D7E4DC; }
+.band .textsize button { color: #fff; }
+.band .textsize button[aria-pressed="true"] { background: var(--gold); color: #1E2A24; }
+.band .who { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .25); }
+.band .who-name { color: #fff; }
+.band .role { color: var(--gold-light) !important; }
+.band .avatar { background: var(--gold); color: #1E2A24; }
+.band .who .btn { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .45); }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 14px; }
+.tab { border: 1.5px solid rgba(255, 255, 255, .35); background: transparent; color: #fff; padding: 9px 18px; font-weight: 700; font-size: 17px; border-radius: 99px; min-height: 46px; }
+.tab:hover { background: rgba(255, 255, 255, .1); }
+.tab[aria-selected="true"] { background: #fff; color: var(--accent); border-color: #fff; }
+.toolbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.toolbar-inner { display: flex; flex-wrap: wrap; gap: 8px; padding-block: 12px; }
+.btn-gold { background: var(--gold); border-color: var(--gold); color: #1E2A24; font-weight: 700; }
+.btn-gold:hover { filter: brightness(1.06); border-color: var(--gold); }
+
+.who { display: flex; align-items: center; gap: 10px; padding: 4px 4px 4px 6px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); min-width: 0; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+.who-text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+.who-name { font-weight: 700; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 18ch; }
+.role { font-size: 13px; font-weight: 700; color: var(--muted); }
+.who .btn { min-height: 38px; padding: 4px 14px; border-radius: 99px; font-size: 15px; }
+.textsize { display: inline-flex; align-items: center; gap: 4px; padding: 3px 4px 3px 12px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface); }
+.textsize > span { font-size: 13px; font-weight: 700; color: var(--muted); margin-right: 4px; }
+.textsize button { border: 0; background: transparent; border-radius: 99px; min-width: 40px; min-height: 36px; font-weight: 700; color: var(--ink); }
+.textsize button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.textsize button:nth-of-type(1) { font-size: 14px; } .textsize button:nth-of-type(2) { font-size: 17px; } .textsize button:nth-of-type(3) { font-size: 20px; }
+
+/* welcome page: school panel beside the sign-in card */
+body.locked .masthead, body.locked main { display: none; }
+body:not(.locked) .gate { display: none; }
+.gate { min-height: 100%; display: grid; place-items: center; padding-block: 32px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: linear-gradient(180deg, var(--accent) 0 38%, var(--paper) 38% 100%); }
+.gate-wrap { width: min(980px, 100%); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); background: var(--surface); border-radius: 10px; box-shadow: 0 18px 40px rgba(20, 40, 30, .18); overflow: hidden; }
+.gate-intro { background: var(--accent-deep); color: #fff; padding: 34px 34px 30px; display: flex; flex-direction: column; gap: 10px; border-right: 4px solid var(--gold); }
+.gate-seal { width: 104px; height: 104px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px var(--accent-deep), 0 0 0 6px var(--gold); }
+.gate-dep { margin: 8px 0 0; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-light); }
+.gate-intro h2 { font-family: var(--f-display); font-size: clamp(26px, 3.4vw, 34px); line-height: 1.15; margin: 0; color: #fff; }
+.gate-school { margin: 0; font-size: 19px; font-weight: 600; color: #E9F1EC; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; margin: 8px 0 4px; padding: 14px 16px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 8px; }
+.facts div { min-width: 0; }
+.facts dt { font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-light); }
+.facts dd { margin: 0; font-size: 18px; font-weight: 600; }
+.gate-about { margin: 0; font-size: 16px; color: #D7E4DC; max-width: 46ch; }
+.gate-kinds { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.gate-kinds li { border-top: 3px solid var(--gold); background: rgba(255, 255, 255, .07); padding: 10px 12px; border-radius: 0 0 6px 6px; display: flex; flex-direction: column; }
+.gate-kinds b { font-size: 16px; } .gate-kinds span { font-size: 14px; color: #D7E4DC; }
+.gate-card { padding: 30px 30px 28px; display: flex; flex-direction: column; gap: 12px; }
+.gate-card .textsize { align-self: flex-end; }
+.gate-card-title { font-family: var(--f-display); font-size: 26px; margin: 4px 0 0; color: var(--accent); }
+.gate-msg { margin: 0; color: var(--muted); }
+.gate-form { width: 100%; display: grid; gap: 14px; text-align: left; }
+.inline-check { display: flex; gap: 10px; align-items: center; font-size: 16px; font-weight: 600; color: var(--muted); }
+.inline-check input { width: 20px; height: 20px; min-height: 0; accent-color: var(--accent); }
+.err { color: var(--bad); font-size: 17px; font-weight: 600; background: var(--bad-soft); border-radius: var(--r); padding: 10px 14px; }
+@media (max-width: 820px) {
+  .gate { background: var(--paper); align-items: start; padding-block: 16px; }
+  .gate-wrap { grid-template-columns: minmax(0, 1fr); }
+  .gate-intro { border-right: 0; border-bottom: 4px solid var(--gold); padding: 24px 20px; }
+  .gate-card { padding: 22px 20px 24px; }
+  .gate-kinds { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* report dialog and partnership details */
+.report-dialog { width: min(980px, 100%); }
+.rep-body { padding: 12px 22px 22px; display: grid; gap: 16px; }
+.rep-period { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.rep-period .field { flex: 1 1 260px; }
+.rep-info { border: 1.5px solid var(--line); border-radius: var(--r); padding: 12px 16px 16px; margin: 0; }
+.rep-info legend { font-size: 18px; font-weight: 700; padding: 0 8px; color: var(--accent); }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 14px; }
+.rep-info input { min-height: 46px; font-size: 17px; }
+.rep-note { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
+.rep-preview { border: 1px solid var(--line); border-radius: var(--r); overflow-x: auto; }
+.rep-preview table { min-width: 720px; }
+.rep-preview td, .rep-preview th { font-size: 15px; padding: 9px 12px; }
+.rep-summary { font-size: 17px; font-weight: 600; margin: 0; }
+details.more { border: 1.5px dashed var(--field-line); border-radius: var(--r); padding: 10px 16px; }
+details.more summary { font-size: 18px; font-weight: 700; color: var(--accent); cursor: pointer; min-height: 40px; display: flex; align-items: center; }
+details.more[open] summary { margin-bottom: 10px; }
+.map-note { font-size: 15px; color: var(--muted); margin: 4px 0 0; }
+.map-note b { color: var(--accent); }
+@media (max-width: 640px) { .grid3 { grid-template-columns: minmax(0, 1fr); } }
+
+/* notices */
+.notice { margin-top: 18px; border: 1px solid var(--line); background: var(--accent-soft); border-radius: var(--r); padding: 12px 16px; font-size: 16px; }
+
+/* month navigator */
+.monthbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding-block: 24px 16px; }
+.monthnav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.monthnav h2 { font-family: var(--f-display); font-size: clamp(26px, 3.6vw, 34px); margin: 0; color: var(--ink); min-width: 9ch; text-align: center; }
+.navbtn { min-width: 56px; min-height: 56px; font-size: 24px; border-radius: 50%; padding: 0; }
+.monthpick { width: auto; min-height: 48px; font-size: 16px; }
+
+/* totals */
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--r); padding: 16px 18px; min-width: 0; }
+.tile .k { font-size: 16px; font-weight: 700; }
+.tile .v { font-family: var(--f-display); font-weight: 700; font-size: 32px; line-height: 1.15; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .s { font-size: 15px; color: var(--muted); }
+.cmp { font-size: 15px; font-weight: 600; margin-top: 2px; }
+.cmp.up { color: var(--good); } .cmp.down { color: var(--bad); } .cmp.same { color: var(--muted); }
+
+/* filters */
+.filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-block: 22px 12px; }
+.filters input[type="search"] { flex: 1 1 280px; width: auto; }
+.grade-filter { flex: 0 1 300px; width: auto; }
+.gs { display: inline-block; font-size: 14px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 1px 8px; }
+@media (max-width: 560px) { .grade-filter { flex: 1 1 100%; } }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 17px; font-weight: 600; min-height: 48px; padding: 8px 18px; border-radius: 99px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+/* sections + tables */
+.section-title { font-family: var(--f-display); font-size: 22px; margin: 26px 0 12px; color: var(--accent); }
+.register { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); padding: 12px 14px; border-bottom: 2px solid var(--line); background: var(--accent-soft); white-space: nowrap; }
+td { padding: 14px; border-bottom: 1px solid var(--line); vertical-align: middle; font-size: 17px; }
+tbody tr:last-child td { border-bottom: 0; }
+tfoot td { font-weight: 700; background: var(--accent-soft); border-top: 2px solid var(--line); }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.name { font-weight: 700; font-size: 18px; }
+.sub { font-size: 15px; color: var(--muted); }
+.badge { display: inline-block; font-size: 14px; font-weight: 700; padding: 3px 10px; border-radius: 99px; margin-right: 8px; white-space: nowrap; }
+.badge.k-money { background: var(--warn-soft); color: var(--warn); }
+.badge.k-hours { background: var(--good-soft); color: var(--good); }
+.badge.k-items { background: var(--accent-soft); color: var(--accent); }
+.what { font-weight: 600; }
+.name-btn { border: 0; background: none; padding: 0; font: inherit; font-weight: 700; font-size: 18px; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-align: left; }
+.empty { padding: 34px 16px; text-align: center; color: var(--muted); font-size: 18px; }
+.empty strong { display: block; color: var(--ink); font-size: 19px; margin-bottom: 4px; }
+tr.current td { background: #F3F6FB; }
+tr.current td:first-child { font-weight: 700; }
+
+/* charts */
+.charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px 8px; min-width: 0; }
+.chart h3 { margin: 0 0 6px; font-size: 17px; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { font-family: var(--f-body); fill: var(--muted); }
+.chart .val { fill: var(--ink); font-weight: 700; }
+
+.yearbar { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px; padding-block: 24px 6px; }
+.yearbar .field { display: flex; flex-direction: column; gap: 6px; }
+.yearbar select { width: auto; min-width: 240px; }
+
+/* dialogs */
+.overlay { position: fixed; inset: 0; z-index: 50; background: rgba(15, 22, 35, .5); display: grid; place-items: center; padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.dialog { width: min(760px, 100%); max-height: 100%; overflow: auto; background: var(--surface); border-radius: 8px; border-top: 4px solid var(--accent); box-shadow: var(--shadow); }
+.dialog header { padding: 18px 22px 4px; }
+.dialog h2 { font-family: var(--f-display); font-size: 25px; margin: 0; color: var(--accent); line-height: 1.2; }
+.dialog .sub { font-size: 16px; margin: 4px 0 0; color: var(--ink); }
+.acc-dialog { width: min(860px, 100%); }
+.btn-sm { min-height: 42px; padding: 6px 14px; font-size: 16px; }
+.acc-pane { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 12px 22px 22px; }
+.acc-add { display: flex; flex-wrap: wrap; gap: 10px; }
+.acc-table td { font-size: 17px; padding: 12px 14px; }
+.acc-table .who-col b { display: block; font-size: 18px; }
+.acc-table .who-col span { font-size: 15px; color: var(--muted); }
+.acc-table .uname { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 16px; background: var(--accent-soft); border-radius: 4px; padding: 2px 8px; overflow-wrap: anywhere; }
+.acc-table .acts { text-align: right; white-space: nowrap; }
+.acc-type { display: inline-block; font-size: 14px; font-weight: 700; padding: 2px 10px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+.acc-type.admin { background: var(--accent); color: var(--accent-ink); }
+.acc-type.viewer { background: #EEF0EE; color: var(--muted); }
+.acc-note { margin: 0; font-size: 16px; color: var(--muted); }
+.help { margin: 2px 0 0; font-size: 15px; color: var(--muted); font-weight: 400; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 640px) {
+  .acc-table thead { display: none; }
+  .acc-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .acc-table td { display: block; border: 0; padding: 0; }
+  .acc-table .acts { grid-row: 1 / span 3; grid-column: 2; align-self: center; }
+}
+.dialog form { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 12px 22px 22px; }
+.step { border: 1.5px solid var(--line); border-radius: var(--r); padding: 12px 16px 16px; margin: 0; min-width: 0; }
+.step legend { font-size: 19px; font-weight: 700; padding: 0 8px; color: var(--accent); }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.grid2 .span2 { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.kinds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.kind { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; padding: 14px 16px; min-height: 84px; border-radius: var(--r); border: 2px solid var(--line); background: var(--surface); color: var(--ink); }
+.kind b { font-size: 19px; } .kind span { font-size: 15px; color: var(--muted); }
+.kind:hover { border-color: var(--accent); }
+.kind[aria-checked="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.kind[aria-checked="true"] b::before { content: "\2713  "; }
+.quick { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; font-size: 16px; }
+.qbtn { font-size: 16px; font-weight: 600; min-height: 46px; padding: 6px 14px; border-radius: var(--r); border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); }
+.qbtn:hover { border-color: var(--accent); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+.actions .right { display: flex; gap: 10px; margin-left: auto; flex-wrap: wrap; }
+
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: #fff; padding: 12px 20px; border-radius: var(--r); font-weight: 600; font-size: 17px; box-shadow: var(--shadow); z-index: 60; max-width: calc(100% - 32px); }
+
+/* print: monthly report only */
+.print-head { display: none; }
+@media print {
+  body { background: #fff; font-size: 12pt; zoom: 1 !important; }
+  .masthead .band, .toolbar, .tabs, .monthnav .navbtn, .monthpick, #addBtn, .filters, .notice, .edit-col, .toast, .overlay { display: none !important; }
+  .print-head { display: block; text-align: center; margin-bottom: 10pt; }
+  .masthead { border: 0; }
+  .register { overflow: visible; border-color: #999; }
+  th { background: #eee !important; }
+  .tile { border-color: #999; }
+}
+
+/* phone */
+@media (max-width: 760px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .charts { grid-template-columns: minmax(0, 1fr); }
+  .register.cards { border: 0; background: transparent; overflow: visible; }
+  .register.cards table, .register.cards tbody { display: block; }
+  .register.cards thead { display: none; }
+  .register.cards tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding: 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); margin-bottom: 10px; }
+  .register.cards td { display: block; border: 0; padding: 0; }
+  .register.cards td.c-main { grid-column: 1; grid-row: 1; }
+  .register.cards td.c-act { grid-column: 2; grid-row: 1; }
+  .register.cards td.c-meta { grid-column: 1 / -1; }
+  .register.cards td[data-label]::before { content: attr(data-label) " \00B7 "; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+  .register.cards td.num { text-align: left; }
+}
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+  .tile { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; align-items: center; padding: 12px 16px; }
+  .tile .v { grid-column: 2; grid-row: 1 / 4; font-size: 26px; }
+  .kinds, .grid2 { grid-template-columns: minmax(0, 1fr); }
+  .seal { width: 56px; height: 56px; }
+  .brand { align-items: flex-start; gap: 12px; }
+  .tab { padding: 8px 14px; }
+  .monthbar { justify-content: center; }
+  .monthnav { width: 100%; justify-content: space-between; flex-wrap: wrap; row-gap: 10px; }
+  .monthnav h2 { min-width: 0; flex: 1; font-size: 24px; }
+  .monthpick { order: 3; flex: 1 1 100%; width: 100%; }
+  #addBtn { width: 100%; }
+  .yearbar select { min-width: 0; width: 100%; }
+  .yearbar .field { width: 100%; }
+  .tab { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<section class="gate" id="gate" aria-labelledby="gateTitle">
+  <div class="gate-wrap">
+    <aside class="gate-intro">
+      <img class="gate-seal" src="/seal.webp" alt="Trece Martires Elementary School seal" width="104" height="104">
+      <p class="gate-dep">Republic of the Philippines · Department of Education</p>
+      <h2 id="gateTitle">Donations &amp; Partnerships Record</h2>
+      <p class="gate-school">Trece Martires Elementary School</p>
+      <dl class="facts">
+        <div><dt>School ID</dt><dd>114098</dd></div>
+        <div><dt>Region</dt><dd>V – Bicol</dd></div>
+        <div><dt>Division</dt><dd>Sorsogon</dd></div>
+        <div><dt>Offering</dt><dd>Elementary</dd></div>
+      </dl>
+      <p class="gate-about">A monthly record of the money, volunteer time, and things that parents, alumni, and partners give to the school, ready for the School Partnerships Data Sheet.</p>
+      <ul class="gate-kinds" aria-label="What is recorded">
+        <li><b>Money</b><span>Financial support</span></li>
+        <li><b>Volunteer time</b><span>Hours of help</span></li>
+        <li><b>Things</b><span>In-kind donations</span></li>
+      </ul>
+    </aside>
+    <div class="gate-card">
+      <div class="textsize" role="group" aria-label="Text size"><span>Text size</span><button type="button" data-size="normal" aria-label="Normal text">A</button><button type="button" data-size="large" aria-label="Large text">A</button><button type="button" data-size="xlarge" aria-label="Extra large text">A</button></div>
+      <h3 class="gate-card-title">Sign in</h3>
+      <p class="gate-msg" id="gateMsg">Loading…</p>
+
+      <form class="gate-form" id="loginForm" hidden novalidate>
+        <div class="field"><label for="lRole">Log in as</label>
+          <select id="lRole"><option value="admin">Admin</option><option value="teacher" selected>Teacher</option><option value="viewer">Viewer</option></select></div>
+        <div class="field"><label for="lUser">Username</label><input type="text" id="lUser" autocomplete="username" autocapitalize="none" spellcheck="false"></div>
+        <div class="field"><label for="lPass">Password</label><input type="password" id="lPass" autocomplete="current-password"></div>
+        <label class="inline-check"><input type="checkbox" id="lShow"> Show password</label>
+        <div class="err" id="lErr" role="alert" hidden></div>
+        <button class="btn btn-primary btn-big" id="lBtn" type="submit">Log in</button>
+      </form>
+
+      <form class="gate-form" id="setupForm" hidden novalidate>
+        <div class="field"><label for="sCode">Setup code</label><input type="password" id="sCode" autocomplete="off"></div>
+        <div class="field"><label for="sUser">Admin username</label><input type="text" id="sUser" autocomplete="username" autocapitalize="none" spellcheck="false"></div>
+        <div class="field"><label for="sPass">Admin password <em>(6 or more characters)</em></label><input type="password" id="sPass" autocomplete="new-password"></div>
+        <label class="inline-check"><input type="checkbox" id="sShow"> Show password</label>
+        <div class="err" id="sErr" role="alert" hidden></div>
+        <button class="btn btn-primary btn-big" id="sBtn" type="submit">Create Admin account</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<header class="masthead">
+  <div class="print-head"><strong>TRECE MARTIRES ELEMENTARY SCHOOL</strong><br>Casiguran, Sorsogon<br><strong id="printTitle">Monthly Report of Donations and Volunteers</strong></div>
+  <div class="band">
+    <div class="wrap band-inner">
+      <div class="brand">
+        <img class="seal" src="/seal.webp" alt="Trece Martires Elementary School seal" width="78" height="78">
+        <div>
+          <p class="eyebrow">School Partnerships · Trece Martires Elementary School</p>
+          <h1>Donations &amp; Partnerships Record</h1>
+          <p class="facts-line" id="factsLine">School ID 114098 · Region V – Bicol · Division of Sorsogon · Casiguran, Sorsogon</p>
+        </div>
+      </div>
+      <div class="head-actions">
+        <div class="textsize" role="group" aria-label="Text size"><span>Text size</span><button type="button" data-size="normal" aria-label="Normal text">A</button><button type="button" data-size="large" aria-label="Large text">A</button><button type="button" data-size="xlarge" aria-label="Extra large text">A</button></div>
+        <div class="who" id="who" hidden>
+          <span class="avatar" id="whoInitial" aria-hidden="true"></span>
+          <div class="who-text"><span class="who-name" id="whoName"></span><span class="role" id="roleBadge"></span></div>
+          <button class="btn" id="logoutBtn" type="button">Log out</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <nav class="tabs" role="tablist" aria-label="Views">
+        <button class="tab" role="tab" data-view="month" id="tabMonth" aria-selected="true">Monthly Record</button>
+        <button class="tab" role="tab" data-view="year" id="tabYear" aria-selected="false">Year Summary</button>
+        <button class="tab" role="tab" data-view="people" id="tabPeople" aria-selected="false">Partners &amp; Volunteers</button>
+      </nav>
+    </div>
+  </div>
+  <div class="toolbar">
+    <div class="wrap toolbar-inner">
+      <button class="btn btn-gold" id="reportBtn" type="button">Consolidation report (Excel)</button>
+      <button class="btn" id="printBtn" type="button">Print monthly report</button>
+      <button class="btn" id="exportBtn" type="button">Export CSV</button>
+      <button class="btn" id="accountsBtn" type="button" hidden>Teachers &amp; logins</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="notice" id="notice" hidden></div>
+
+  <!-- MONTHLY RECORD -->
+  <div id="viewMonth">
+    <section class="monthbar" aria-label="Choose a month">
+      <div class="monthnav">
+        <button class="btn navbtn" id="prevMonth" type="button" aria-label="Previous month">&#8249;</button>
+        <h2 id="monthLabel">—</h2>
+        <button class="btn navbtn" id="nextMonth" type="button" aria-label="Next month">&#8250;</button>
+        <input type="month" id="monthPick" class="monthpick" aria-label="Go to month">
+      </div>
+      <button class="btn btn-primary btn-big" id="addBtn" type="button" hidden>+ Record a donation or volunteer</button>
+    </section>
+
+    <section class="tiles" aria-label="Totals for this month">
+      <div class="tile"><div class="k">People who helped</div><div class="v" id="mPeople">0</div><div class="s" id="mPeopleSub"></div><div class="cmp" id="mPeopleCmp"></div></div>
+      <div class="tile"><div class="k">Volunteer hours</div><div class="v" id="mHours">0</div><div class="s" id="mHoursSub"></div><div class="cmp" id="mHoursCmp"></div></div>
+      <div class="tile"><div class="k">Money received</div><div class="v" id="mMoney">₱0.00</div><div class="s" id="mMoneySub"></div><div class="cmp" id="mMoneyCmp"></div></div>
+      <div class="tile"><div class="k">Things donated</div><div class="v" id="mItems">0</div><div class="s" id="mItemsSub"></div><div class="cmp" id="mItemsCmp"></div></div>
+    </section>
+
+    <section class="filters" aria-label="Filters">
+      <input type="search" id="mq" placeholder="Search a name, item, or activity" aria-label="Search this month">
+      <select id="mGrade" class="grade-filter" aria-label="Grade and section"></select>
+      <div class="chips" role="group" aria-label="Show">
+        <button class="chip" type="button" data-kind="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-kind="money" aria-pressed="false">Money</button>
+        <button class="chip" type="button" data-kind="hours" aria-pressed="false">Volunteer time</button>
+        <button class="chip" type="button" data-kind="items" aria-pressed="false">Things</button>
+      </div>
+    </section>
+
+    <h3 class="section-title" id="recTitle">Records</h3>
+    <section class="register cards" aria-label="Records this month">
+      <table>
+        <thead><tr><th>Date</th><th>Name</th><th>Grade &amp; section</th><th>What was given</th><th>Activity</th><th>Received by</th><th class="edit-col"></th></tr></thead>
+        <tbody id="mRows"></tbody>
+      </table>
+      <div class="empty" id="mEmpty" hidden></div>
+    </section>
+
+    <h3 class="section-title" id="whoTitle">Who helped this month</h3>
+    <section class="register cards" aria-label="Who helped this month">
+      <table>
+        <thead><tr><th>Name</th><th>Who they are</th><th>Grade &amp; section</th><th class="num">Hours</th><th class="num">Money</th><th>Things</th></tr></thead>
+        <tbody id="mPeopleRows"></tbody>
+      </table>
+      <div class="empty" id="mPeopleEmpty" hidden></div>
+    </section>
+  </div>
+
+  <!-- YEAR SUMMARY -->
+  <div id="viewYear" hidden>
+    <section class="yearbar">
+      <div class="field"><label for="yearPick">School year or calendar year</label><select id="yearPick"></select></div>
+      <p class="sub" id="yearNote" style="margin:0"></p>
+    </section>
+    <section class="tiles" aria-label="Totals for the year" style="margin-top:14px">
+      <div class="tile"><div class="k">People who helped</div><div class="v" id="yPeople">0</div><div class="s">different volunteers and donors</div></div>
+      <div class="tile"><div class="k">Volunteer hours</div><div class="v" id="yHours">0</div><div class="s" id="yHoursSub"></div></div>
+      <div class="tile"><div class="k">Money received</div><div class="v" id="yMoney">₱0.00</div><div class="s" id="yMoneySub"></div></div>
+      <div class="tile"><div class="k">Things donated</div><div class="v" id="yItems">0</div><div class="s" id="yItemsSub"></div></div>
+    </section>
+    <div class="charts">
+      <div class="chart"><h3>Money received per month</h3><div id="chartMoney"></div></div>
+      <div class="chart"><h3>Volunteer hours per month</h3><div id="chartHours"></div></div>
+    </div>
+    <h3 class="section-title">Month by month</h3>
+    <section class="register" aria-label="Month by month">
+      <table>
+        <thead><tr><th>Month</th><th class="num">People</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Things</th><th class="num">Value of things</th><th></th></tr></thead>
+        <tbody id="yRows"></tbody>
+        <tfoot id="yFoot"></tfoot>
+      </table>
+    </section>
+    <h3 class="section-title">By grade and section</h3>
+    <section class="register" aria-label="By grade and section">
+      <table>
+        <thead><tr><th>Grade &amp; section</th><th class="num">People</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Things</th><th class="num">Value of things</th></tr></thead>
+        <tbody id="gRows"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- PEOPLE -->
+  <div id="viewPeople" hidden>
+    <section class="filters">
+      <input type="search" id="pq" placeholder="Search a name" aria-label="Search volunteers and donors">
+      <div class="field" style="min-width:220px"><select id="pYear" aria-label="Period"></select></div>
+    </section>
+    <section class="register cards" aria-label="Volunteers and donors">
+      <table>
+        <thead><tr><th>Name</th><th>Who they are</th><th>Grade &amp; section</th><th class="num">Times helped</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Things</th><th>Last helped</th></tr></thead>
+        <tbody id="pRows"></tbody>
+      </table>
+      <div class="empty" id="pEmpty" hidden></div>
+    </section>
+  </div>
+  <div style="height:48px"></div>
+</main>
+
+<!-- Record dialog -->
+<div class="overlay" id="donOverlay" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="donTitle">
+    <header><h2 id="donTitle">Record a donation or volunteer</h2><p class="sub" id="donSub">Fill in the boxes, then press Save.</p></header>
+    <form id="donForm" novalidate>
+      <fieldset class="step">
+        <legend>1. What was given?</legend>
+        <div class="kinds" role="radiogroup" aria-label="What was given">
+          <button type="button" class="kind" data-kind="money" role="radio" aria-checked="false"><b>Money</b><span>Cash given, in pesos</span></button>
+          <button type="button" class="kind" data-kind="hours" role="radio" aria-checked="false"><b>Volunteer time</b><span>Hours of help</span></button>
+          <button type="button" class="kind" data-kind="items" role="radio" aria-checked="false"><b>Things</b><span>Materials, supplies or equipment</span></button>
+        </div>
+      </fieldset>
+      <fieldset class="step">
+        <legend>2. Who gave it?</legend>
+        <div class="grid2">
+          <div class="field span2"><label for="fName">Full name of volunteer or donor</label><input type="text" id="fName" list="fNames" autocomplete="off" maxlength="120" placeholder="e.g. Maria Santos"><datalist id="fNames"></datalist></div>
+          <div class="field"><label for="fType">Who are they?</label><select id="fType"></select><p class="map-note" id="fTypeNote"></p></div>
+          <div class="field"><label for="fDate">Date</label><input type="date" id="fDate"></div>
+          <div class="field span2"><label for="fGrade">Grade and section <em>(class of the learner, or the class that received it)</em></label><select id="fGrade"></select></div>
+        </div>
+      </fieldset>
+      <fieldset class="step" id="fDetails" hidden>
+        <legend id="fDetailsTitle">3. How much?</legend>
+        <div class="grid2" id="fMoney" hidden>
+          <div class="field"><label for="fAmount">Amount in pesos (₱)</label><input type="text" id="fAmount" inputmode="decimal" placeholder="e.g. 1500"></div>
+        </div>
+        <div id="fHoursBox" hidden>
+          <div class="grid2">
+            <div class="field"><label for="fHours">Number of hours</label><input type="number" id="fHours" min="0.5" step="0.5" inputmode="decimal" placeholder="e.g. 4"></div>
+            <div class="field"><label for="fWork">Kind of work</label><select id="fWork"></select></div>
+            <div class="field span2"><label for="fHourValue">Value in pesos (₱) <em>optional</em></label><input type="text" id="fHourValue" inputmode="decimal" placeholder="Leave blank if not known"></div>
+          </div>
+          <div class="quick"><span>Quick choice:</span>
+            <button type="button" class="qbtn" data-h="1">1 hour</button><button type="button" class="qbtn" data-h="2">2 hours</button>
+            <button type="button" class="qbtn" data-h="4">Half day (4)</button><button type="button" class="qbtn" data-h="8">Whole day (8)</button></div>
+        </div>
+        <div class="grid2" id="fItems" hidden>
+          <div class="field"><label for="fCType">Type of donation</label><select id="fCType"></select></div>
+          <div class="field"><label for="fSpecific">Kind of item</label><select id="fSpecific"></select></div>
+          <div class="field span2"><label for="fItemDesc">What was donated?</label><input type="text" id="fItemDesc" maxlength="200" placeholder="e.g. Bond paper, short (A4)"></div>
+          <div class="field"><label for="fItemQty">How many?</label><input type="number" id="fItemQty" min="1" step="1" inputmode="numeric" placeholder="e.g. 10"></div>
+          <div class="field"><label for="fItemUnit">Unit</label><select id="fItemUnit"><option>pcs</option><option>reams</option><option>boxes</option><option>packs</option><option>sets</option><option>units</option><option>bottles</option><option>gallons</option><option>sacks</option><option>kilos</option><option>rolls</option></select></div>
+          <div class="field span2"><label for="fEstValue">Estimated value in pesos (₱) <em>optional</em></label><input type="text" id="fEstValue" inputmode="decimal" placeholder="Leave blank if not known"></div>
+        </div>
+      </fieldset>
+      <fieldset class="step">
+        <legend>4. Other details</legend>
+        <div class="grid2">
+          <div class="field"><label for="fActivity">Activity or occasion</label><input type="text" id="fActivity" list="fActivities" maxlength="120" placeholder="e.g. Brigada Eskwela"><datalist id="fActivities"></datalist></div>
+          <div class="field"><label for="fReceived">Received by</label><select id="fReceived"></select></div>
+          <div class="field span2"><label for="fRemarks">Notes <em>optional</em></label><textarea id="fRemarks" rows="2" maxlength="500" placeholder="Anything else to remember"></textarea></div>
+        </div>
+      </fieldset>
+      <details class="more" id="fMore">
+        <summary>5. For the partnership report <em style="font-weight:400;color:var(--muted)">&nbsp;(optional)</em></summary>
+        <div class="grid2">
+          <div class="field span2"><label for="fContact">Partner contact details <em>optional</em></label><input type="text" id="fContact" maxlength="160" placeholder="Phone or email of an organization or business"></div>
+          <div class="field"><label for="fLearners">No. of beneficiary learners</label><input type="number" id="fLearners" min="0" step="1" placeholder="Use the school number"></div>
+          <div class="field"><label for="fPersonnel">No. of beneficiary personnel</label><input type="number" id="fPersonnel" min="0" step="1" placeholder="Use the school number"></div>
+          <div class="field"><label for="fForm">Form of agreement</label><select id="fForm"></select></div>
+          <div class="field"><label for="fStatus">Status of the project</label><select id="fStatus"></select></div>
+          <div class="field"><label for="fInitiated">Initiated by</label><select id="fInitiated"></select></div>
+        </div>
+      </details>
+      <div class="err" id="fErr" role="alert" hidden></div>
+      <div class="actions">
+        <button type="button" class="btn btn-danger" id="fDelete" hidden>Delete record</button>
+        <div class="right"><button type="button" class="btn" id="fCancel">Cancel</button><button type="submit" class="btn btn-primary" id="fSave">Save record</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Accounts dialog: one login per teacher -->
+<div class="overlay" id="accOverlay" hidden>
+  <div class="dialog acc-dialog" role="dialog" aria-modal="true" aria-labelledby="accTitle">
+    <header><h2 id="accTitle">Teachers &amp; logins</h2><p class="sub" id="accSub">Each teacher has their own username and password. Tell each teacher their login in person.</p></header>
+    <div class="acc-pane" id="accListPane">
+      <div class="acc-add">
+        <button type="button" class="btn btn-primary" id="accAddTeacher">+ Add a teacher login</button>
+        <button type="button" class="btn" id="accAddViewer">+ Add a viewer login</button>
+      </div>
+      <div class="register"><table class="acc-table">
+        <thead><tr><th>Name</th><th>Login type</th><th>Username</th><th><span class="sr-only">Actions</span></th></tr></thead>
+        <tbody id="accRows"></tbody>
+      </table></div>
+      <p class="acc-note" id="accMissing" hidden></p>
+      <div class="actions"><div class="right"><button type="button" class="btn" id="accClose">Close</button></div></div>
+    </div>
+    <form id="accForm" class="acc-pane" novalidate hidden>
+      <div class="field" id="aWhoField"><label for="aWho">Teacher</label><select id="aWho"></select></div>
+      <div class="field" id="aNameField"><label for="aName" id="aNameLabel">Full name</label><input type="text" id="aName" autocomplete="off" maxlength="120"></div>
+      <div class="field"><label for="aUser">Username</label><input type="text" id="aUser" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="60">
+        <p class="help">No spaces. A username is suggested from the name; you can change it.</p></div>
+      <div class="field"><label for="aPass" id="aPassLabel">Password</label><input type="password" id="aPass" autocomplete="new-password"></div>
+      <label class="inline-check"><input type="checkbox" id="aShow"> Show password</label>
+      <div class="err" id="aErr" role="alert" hidden></div>
+      <div class="actions">
+        <button type="button" class="btn btn-danger" id="aRemove" hidden>Remove this login</button>
+        <div class="right"><button type="button" class="btn" id="aBack">Back</button><button type="submit" class="btn btn-primary" id="aSave">Save</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Consolidation report dialog -->
+<div class="overlay" id="repOverlay" hidden>
+  <div class="dialog report-dialog" role="dialog" aria-modal="true" aria-labelledby="repTitle">
+    <header><h2 id="repTitle">Consolidation Report</h2><p class="sub">School Partnerships Data Sheet (PDS), consolidated per partner group. Choose the period, check the details, then download the Excel file.</p></header>
+    <div class="rep-body">
+      <div class="rep-period">
+        <div class="field"><label for="repPeriod">Period of the report</label><select id="repPeriod"></select></div>
+      </div>
+
+      <fieldset class="rep-info" id="repInfo">
+        <legend>Report details</legend>
+        <div class="grid3">
+          <div class="field"><label for="riRegion">Region</label><input type="text" id="riRegion"></div>
+          <div class="field"><label for="riDivision">Division</label><input type="text" id="riDivision"></div>
+          <div class="field"><label for="riOffering">Offering</label><input type="text" id="riOffering"></div>
+          <div class="field"><label for="riSchool">School / LC name</label><input type="text" id="riSchool"></div>
+          <div class="field"><label for="riSchoolId">School ID</label><input type="text" id="riSchoolId" inputmode="numeric"></div>
+          <div class="field"><label for="riHour">Value of 1 volunteer hour (₱)</label><input type="text" id="riHour" inputmode="decimal" placeholder="e.g. 54.38"></div>
+          <div class="field"><label for="riPrep">Prepared by</label><input type="text" id="riPrep"></div>
+          <div class="field"><label for="riPrepPos">Position / designation</label><input type="text" id="riPrepPos"></div>
+          <div class="field"><label for="riPrepCon">Contact no.</label><input type="text" id="riPrepCon" inputmode="tel"></div>
+          <div class="field"><label for="riAppr">Approved by</label><input type="text" id="riAppr"></div>
+          <div class="field"><label for="riApprPos">Position / designation</label><input type="text" id="riApprPos"></div>
+          <div class="field"><label for="riApprCon">Contact no.</label><input type="text" id="riApprCon" inputmode="tel"></div>
+          <div class="field"><label for="riLearners">Beneficiary learners</label><input type="number" id="riLearners" min="0" step="1"></div>
+          <div class="field"><label for="riPersonnel">Beneficiary personnel</label><input type="number" id="riPersonnel" min="0" step="1"></div>
+        </div>
+        <p class="rep-note" id="riNote">Beneficiary numbers are used for every row unless a record has its own numbers.</p>
+        <div class="actions" id="riActions"><div class="right"><button type="button" class="btn" id="riSave">Save these details</button></div></div>
+      </fieldset>
+
+      <p class="rep-summary" id="repSummary"></p>
+      <div class="rep-preview">
+        <table>
+          <thead><tr><th>Partner</th><th>Partner type</th><th>Contribution type</th><th>Specific</th><th>Unit</th><th class="num">Quantity</th><th class="num">Value (₱)</th><th class="num">Records</th></tr></thead>
+          <tbody id="repRows"></tbody>
+        </table>
+      </div>
+      <div class="err" id="repErr" role="alert" hidden></div>
+      <div class="actions">
+        <div class="right"><button type="button" class="btn" id="repClose">Close</button><button type="button" class="btn btn-primary btn-big" id="repDownload">Download Excel report</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  function el(tag, attrs, ...kids) {
+    const n = document.createElement(tag);
+    if (attrs) for (const [k, v] of Object.entries(attrs)) {
+      if (v == null || v === false) continue;
+      if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else if (k === "html") n.innerHTML = v;
+      else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v === true ? "" : v);
+    }
+    for (const c of kids) if (c != null) n.append(c);
+    return n;
+  }
+  const pad = (x) => String(x).padStart(2, "0");
+  const ymd = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const today = () => ymd(new Date());
+  const thisMonth = () => today().slice(0, 7);
+  const monthName = (ym, opts = { month: "long", year: "numeric" }) => { const [y, m] = ym.split("-").map(Number); return new Date(y, m - 1, 1).toLocaleDateString("en-PH", opts); };
+  const shiftMonth = (ym, k) => { const [y, m] = ym.split("-").map(Number); const d = new Date(y, m - 1 + k, 1); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}`; };
+  const fmtDate = (s) => { if (!s) return ""; const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d).toLocaleDateString("en-PH", { month: "short", day: "numeric", year: "numeric" }); };
+  const peso = (n) => "₱" + (Number(n) || 0).toLocaleString("en-PH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const hnum = (n) => { const v = Number(n) || 0; return Number.isInteger(v) ? v.toLocaleString() : v.toFixed(1); };
+  const hrs = (n) => `${hnum(n)} ${Number(n) === 1 ? "hour" : "hours"}`;
+  const key = (s) => String(s || "").trim().toLowerCase().replace(/\s+/g, " ");
+  let toastTimer;
+  function toast(msg) { const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 3200); }
+
+  async function api(path, opts = {}) {
+    const init = { method: opts.method || "GET", credentials: "same-origin", headers: { "x-requested-with": "donations" } };
+    if (opts.body !== undefined) { init.headers["content-type"] = "application/json"; init.body = JSON.stringify(opts.body); }
+    let res;
+    try { res = await fetch("/api/" + path, init); }
+    catch (e) { const err = new Error("Can't reach the server. Check your internet connection and try again."); err.status = 0; throw err; }
+    let data = {}; try { data = await res.json(); } catch (e) { /* empty */ }
+    if (!res.ok) { const err = new Error(data.error || "Something went wrong. Please try again."); err.status = res.status; throw err; }
+    return data;
+  }
+
+  // ---------- state ----------
+  const PDS = {"inKind": [{"type": "Appliances", "specifics": ["Airconditioning Units", "CCTV", "DRR Equipment", "Electric Fans", "Microwave", "Television", "Wall/Alarm Clock", "Gardening Tools", "Gas Stove", "Glassware", "Kitchen ware", "Oven", "Radio System", "Science Laboratory Equipment", "Solar Panels", "Sound System", "Sports Equipment", "Sprinkler", "Others (specify in remarks)"]}, {"type": "Disaster Prevention and Emergency Kits", "specifics": ["Fire Extinguishers", "Emergency Lights", "Hard Caps", "Whistle with Lace", "Personal Protective supplies (facemask, shield, hand gloves, eye googles, PPEs, etc.)", "Go Bags", "DRR Equipment", "Fire Alarm", "Fire Hose", "Thermal/ Temperature Scanner", "First Aid/Emergency Kits", "Medical Consultation", "Food items and Food Supplements", "Medical Services Supplies and Equipment", "Others (specify in remarks)"]}, {"type": "Disinfection and Cleaning Supplies and Equipment", "specifics": ["Hand Sanitizers", "Alcohol", "Disinfectants", "Anti-Bacterial or Germicidal Soaps", "Cleaning Equipment", "Personal hygiene", "Misting Machine", "Foot Bath", "Others (specify in remarks)"]}, {"type": "Furniture", "specifics": ["Armchairs", "Blackboard", "Desks", "Door", "Monoblock Chairs", "Shelves/Cabinets", "Sofa/Sala sets", "Tables", "Teachers' Chair", "Teachers' Table", "Window/Panels", "Others (specify in remarks)"]}, {"type": "ICT Equipment and Technology", "specifics": ["Computer Peripherals", "Computers", "DVD Player", "DVD/CD", "Earphone/Headphone", "E-Books", "E-channel Subscription", "Fax Machine", "Flashdrive", "Internet Connectivity", "Ipad/Tablets", "Laptops", "LCD Projector", "Photocopier", "Printer", "Scanner", "Software", "Telephone Line", "Monitors", "Interactive Whiteboard", "White Screen", "Solar Panels", "Electricity", "Car batteries", "Generator", "Premium membership in remote working tools (Zoom, MS teams, etc.)", "Prepaid load card (Call text and data)", "Hard drive and USB storage", "Risograph/Duplo Machine", "Voice Recorder", "Others (specify in remarks)"]}, {"type": "Infrastructure", "specifics": ["New Classroom Construction", "Classroom Repair", "New Comfort Room Construction", "Comfort Room Repair", "Hardware/Construction Materials", "New Laboratory Construction", "Laboratory Repair", "New Library Construction", "Library Repair", "New Handwashing Facility Construction", "Handwashing Facilitity Repair", "New Covered Court Construction", "Covered Court Repair", "New Stage Construction", "Stage Repair", "New Pathwalk Construction", "Pathwalk Repair", "Construction of Fence and Gate", "Fence and Gate Repair", "Water System Provision", "Water System Repair", "Electrical Facilities Provision", "Electrical Facilities Repair", "Construction of Sports Facilities", "Repair of Sports Facilities", "Construction of School Signage", "School signage repair", "Land/Real Property Donation", "Paint and Painting supplies", "Installation of Flag Pole and Flags", "Installation of Watch Tower", "Other New Construction (specify in remarks)", "Others (specify in remarks)"]}, {"type": "Learner’s school supplies and uniforms", "specifics": ["Bags", "Bicycles", "Boats", "Books", "Copy Papers", "Footwear", "Lamps", "Leaflets", "Learning Modules", "Reference Materials", "School supplies", "Uniform", "Others (specify in remarks)"]}, {"type": "Learner’s wellness, health and nutrition", "specifics": ["Assistive Devices", "Dental services", "Eyeglasses", "Feeding Program", "Medical check-up", "Medicine", "Personal Hygiene", "Physcial Fitness Activities", "Rubber Mat", "Seedlings/Saplings", "Seeds", "Sports Clinic", "Vitamins", "Others (specify in remarks)"]}, {"type": "Printed and Electronic Learning Materials", "specifics": ["Self-Learning Modules (SLM)/ Electronic and printed", "Printed Learning Materials (Textbook, Activity Sheets, Study Guides, references materials)", "Reproduction and Distribution of Printed Materials", "Others (specify in remarks)"]}, {"type": "Transportation Support", "specifics": ["Bicycles", "Boat", "Bus", "Car", "Jeepney", "Motorcycles", "Pick-up", "Vans", "Logistics and Delivery", "Transportation Allowance", "Others (specify in remarks)"]}, {"type": "Others (specify in remarks)", "specifics": []}], "volunteer": ["Brigada Pagbasa", "Carpentry", "Electrical/Electronics", "Landscaping/Gardening", "Masonry", "Ordinary Labor", "Painting", "Plumbing", "Professional services (Medical/Legal/etc.)", "Tutorial learning sessions for online learnings", "Others (specify in remarks)"], "forms": ["Memorandum of Agreement", "Memorandum of Understanding", "Deed of Donation", "Usufruct", "Acknowledgment Receipt", "No signed Agreement", "Others (specify in remarks)"], "status": ["Completed", "On-going", "For implementation", "Pending", "Others (specify in remarks)"], "initiated": ["Central Office", "Regional Office", "Schools Division Office", "School"]};
+  const KIND_NAME = { money: "Money", hours: "Volunteer time", items: "Things" };
+  const DEFAULT_ACTIVITIES = ["Brigada Eskwela", "Feeding Program", "Gulayan sa Paaralan", "School Clean-up", "Christmas Program", "Graduation / Moving Up", "Sports Fest", "Classroom Repair"];
+  let records = [], staff = [], loaded = false;
+  let session = null, canRecord = false, isAdmin = false;
+  let view = "month", month = thisMonth();
+  let mFilter = { q: "", kind: "all", grade: "" };
+  const WHOLE = "Whole school";
+  function sections() {
+    const fromStaff = staff.filter((p) => (p.group || "") === "Teachers" && p.role).map((p) => p.role);
+    const used = records.map((c) => c.gradeSection).filter((g) => g && g !== WHOLE && !fromStaff.includes(g));
+    return [...fromStaff, ...[...new Set(used)].sort()];
+  }
+  const sectionOfTeacher = (name) => { const p = staff.find((x) => x.name === name && (x.group || "") === "Teachers"); return p ? p.role : ""; };
+  let yearSel = "", pFilter = { q: "", year: "" };
+
+  // ---------- money / hours helpers ----------
+  function describe(c) {
+    if (c.kind === "money") return peso(c.amount);
+    if (c.kind === "hours") return hrs(c.hours);
+    const base = `${(Number(c.itemQty) || 0).toLocaleString()} ${c.itemUnit || "pcs"} – ${c.itemDesc || "items"}`;
+    return c.estValue != null && c.estValue > 0 ? `${base} (worth about ${peso(c.estValue)})` : base;
+  }
+  function totals(list) {
+    const people = new Set(), vols = new Set(), donors = new Set();
+    let hours = 0, money = 0, things = 0, value = 0;
+    for (const c of list) {
+      const k = key(c.name); people.add(k);
+      if (c.kind === "hours") { hours += Number(c.hours) || 0; vols.add(k); }
+      if (c.kind === "money") { money += Number(c.amount) || 0; donors.add(k); }
+      if (c.kind === "items") { things++; value += Number(c.estValue) || 0; }
+    }
+    return { people: people.size, volunteers: vols.size, donors: donors.size, hours, money, things, value };
+  }
+  function peopleOf(list) {
+    const map = new Map();
+    for (const c of list) {
+      const k = key(c.name); if (!k) continue;
+      let p = map.get(k);
+      if (!p) { p = { name: c.name.trim(), type: c.type || "", grades: new Set(), times: 0, hours: 0, money: 0, things: [], last: "" }; map.set(k, p); }
+      if (c.gradeSection) p.grades.add(c.gradeSection);
+      p.times++;
+      if (c.kind === "hours") p.hours += Number(c.hours) || 0;
+      if (c.kind === "money") p.money += Number(c.amount) || 0;
+      if (c.kind === "items") p.things.push(`${c.itemQty} ${c.itemUnit} ${c.itemDesc}`);
+      if (!p.type && c.type) p.type = c.type;
+      if (String(c.date) > p.last) p.last = String(c.date);
+    }
+    return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
+  }
+  const inMonth = (ym) => records.filter((c) => String(c.date).slice(0, 7) === ym);
+
+  // ---------- periods (school year June–May, or calendar year) ----------
+  function periodOf(id) {
+    const [t, y] = id.split(":"); const yr = Number(y);
+    const months = t === "sy" ? Array.from({ length: 12 }, (_, i) => shiftMonth(`${yr}-06`, i)) : Array.from({ length: 12 }, (_, i) => `${yr}-${pad(i + 1)}`);
+    return { id, months, label: t === "sy" ? `School Year ${yr}–${yr + 1}` : `Calendar Year ${yr}` };
+  }
+  function periodOptions() {
+    const ms = new Set(records.map((c) => String(c.date).slice(0, 7))); ms.add(thisMonth());
+    const sys = new Set(), cys = new Set();
+    for (const m of ms) { const [y, mo] = m.split("-").map(Number); sys.add(mo >= 6 ? y : y - 1); cys.add(y); }
+    return [...[...sys].sort((a, b) => b - a).map((y) => `sy:${y}`), ...[...cys].sort((a, b) => b - a).map((y) => `cy:${y}`)];
+  }
+  function currentSY() { const [y, m] = thisMonth().split("-").map(Number); return `sy:${m >= 6 ? y : y - 1}`; }
+
+  // ---------- views ----------
+  function setView(v, push) {
+    view = ["year", "people"].includes(v) ? v : "month";
+    $("viewMonth").hidden = view !== "month"; $("viewYear").hidden = view !== "year"; $("viewPeople").hidden = view !== "people";
+    $("tabMonth").setAttribute("aria-selected", String(view === "month"));
+    $("tabYear").setAttribute("aria-selected", String(view === "year"));
+    $("tabPeople").setAttribute("aria-selected", String(view === "people"));
+    $("printBtn").textContent = view === "year" ? "Print year summary" : "Print monthly report";
+    $("printTitle").textContent = view === "year" ? "Summary of Donations and Volunteers" : "Monthly Report of Donations and Volunteers";
+    if (push && location.hash !== "#" + view) { try { location.hash = view; } catch (e) { /* ignore */ } }
+    render();
+  }
+  document.querySelectorAll(".tab").forEach((t) => t.addEventListener("click", () => setView(t.dataset.view, true)));
+  window.addEventListener("hashchange", () => setView(location.hash.slice(1), false));
+
+  function render() {
+    if (view === "month") renderMonth(); else if (view === "year") renderYear(); else renderPeople();
+    renderNotice();
+  }
+  function renderNotice() {
+    const n = $("notice");
+    if (!session) { n.hidden = true; return; }
+    n.textContent = session.role === "viewer" ? "You are viewing as a Viewer. You can look at all records. Only teachers and the admin can add records."
+      : session.role === "teacher" ? "You are logged in as Teacher. You can record and correct donations. Only the admin can delete records." : "";
+    n.hidden = !n.textContent;
+  }
+
+  function cmpText(cur, prev, prevLabel, fmt) {
+    if (!prev && !cur) return ["", "same"];
+    if (cur === prev) return [`Same as ${prevLabel}`, "same"];
+    const diff = cur - prev;
+    return [`${diff > 0 ? "▲" : "▼"} ${fmt(Math.abs(diff))} ${diff > 0 ? "more" : "less"} than ${prevLabel}`, diff > 0 ? "up" : "down"];
+  }
+  function setCmp(id, cur, prev, prevLabel, fmt) { const [t, c] = cmpText(cur, prev, prevLabel, fmt); $(id).textContent = t; $(id).className = "cmp " + c; }
+
+  function renderMonth() {
+    $("monthLabel").textContent = monthName(month);
+    $("monthPick").value = month;
+    $("nextMonth").disabled = month >= thisMonth();
+    const all = inMonth(month).sort((a, b) => String(b.date).localeCompare(String(a.date)) || (b.createdAt || 0) - (a.createdAt || 0));
+    const t = totals(all), p = totals(inMonth(shiftMonth(month, -1)));
+    const prevLabel = monthName(shiftMonth(month, -1), { month: "long" });
+    $("mPeople").textContent = t.people; $("mPeopleSub").textContent = t.people === 1 ? "person" : "volunteers and donors";
+    $("mHours").textContent = hnum(t.hours); $("mHoursSub").textContent = `from ${t.volunteers} volunteer${t.volunteers === 1 ? "" : "s"}`;
+    $("mMoney").textContent = peso(t.money); $("mMoneySub").textContent = `from ${t.donors} donor${t.donors === 1 ? "" : "s"}`;
+    $("mItems").textContent = t.things; $("mItemsSub").textContent = t.value > 0 ? `worth about ${peso(t.value)}` : (t.things === 1 ? "donation of materials" : "donations of materials");
+    setCmp("mPeopleCmp", t.people, p.people, prevLabel, (n) => String(n));
+    setCmp("mHoursCmp", t.hours, p.hours, prevLabel, (n) => hrs(n));
+    setCmp("mMoneyCmp", t.money, p.money, prevLabel, peso);
+    setCmp("mItemsCmp", t.things, p.things, prevLabel, (n) => String(n));
+
+    fillGradeFilter();
+    const list = all.filter((c) => (mFilter.kind === "all" || c.kind === mFilter.kind) &&
+      (!mFilter.grade || (c.gradeSection || "") === mFilter.grade) &&
+      (!mFilter.q || [c.name, c.type, c.activity, c.itemDesc, c.receivedBy, c.remarks].join(" ").toLowerCase().includes(mFilter.q)));
+    $("recTitle").textContent = `Records for ${monthName(month)} (${list.length})`;
+    $("mRows").replaceChildren(...list.map((c) => el("tr", null,
+      el("td", { class: "c-meta", "data-label": "Date", text: fmtDate(c.date) }),
+      el("td", { class: "c-main" }, el("div", { class: "name", text: c.name }), c.type ? el("div", { class: "sub", text: c.type }) : null),
+      el("td", { class: "c-meta", "data-label": "Grade & section" }, c.gradeSection ? el("span", { class: "gs", text: c.gradeSection }) : "—"),
+      el("td", { class: "c-meta", "data-label": "Given" }, el("span", { class: "badge k-" + c.kind, text: KIND_NAME[c.kind] }), el("span", { class: "what", text: describe(c) }),
+        c.remarks ? el("div", { class: "sub", text: c.remarks }) : null),
+      el("td", { class: "c-meta", "data-label": "Activity", text: c.activity || "—" }),
+      el("td", { class: "c-meta", "data-label": "Received by", text: c.receivedBy || "—" }),
+      el("td", { class: "c-act edit-col" }, canRecord ? el("button", { class: "btn", type: "button", text: "Edit", "aria-label": `Edit record for ${c.name}`, onclick: () => openDon(c) }) : null)
+    )));
+    const empty = $("mEmpty");
+    if (!loaded) { empty.hidden = false; empty.replaceChildren(el("strong", { text: "Loading the records…" })); }
+    else if (!all.length) {
+      empty.hidden = false;
+      empty.replaceChildren(el("strong", { text: `No donations or volunteers recorded for ${monthName(month)}` }),
+        el("span", { text: canRecord ? "Press “+ Record a donation or volunteer” to add one." : "Records will appear here once a teacher adds them." }));
+    } else if (!list.length) {
+      empty.hidden = false;
+      empty.replaceChildren(el("strong", { text: "Nothing matches these choices" }), el("button", { class: "btn-link", type: "button", text: "Show everything", onclick: () => { mFilter = { q: "", kind: "all", grade: "" }; $("mq").value = ""; $("mGrade").value = ""; syncChips(); renderMonth(); } }));
+    } else empty.hidden = true;
+
+    const ppl = peopleOf(list);
+    $("whoTitle").textContent = `Who helped in ${monthName(month)}${mFilter.grade ? " – " + mFilter.grade : ""} (${ppl.length})`;
+    $("mPeopleRows").replaceChildren(...ppl.map((p) => el("tr", null,
+      el("td", { class: "c-main" }, el("div", { class: "name", text: p.name })),
+      el("td", { class: "c-meta", "data-label": "Who they are", text: p.type || "—" }),
+      el("td", { class: "c-meta", "data-label": "Grade & section", text: p.grades.size ? [...p.grades].join(", ") : "—" }),
+      el("td", { class: "c-meta num", "data-label": "Hours", text: p.hours ? hnum(p.hours) : "—" }),
+      el("td", { class: "c-meta num", "data-label": "Money", text: p.money ? peso(p.money) : "—" }),
+      el("td", { class: "c-meta", "data-label": "Things", text: p.things.length ? p.things.join("; ") : "—" })
+    )));
+    $("mPeopleEmpty").hidden = ppl.length > 0 || !loaded;
+    $("mPeopleEmpty").replaceChildren(el("strong", { text: "No one recorded yet this month" }));
+  }
+  function syncChips() { document.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.kind === mFilter.kind))); }
+  document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => { mFilter.kind = b.dataset.kind; syncChips(); renderMonth(); }));
+  $("mq").addEventListener("input", (e) => { mFilter.q = key(e.target.value); renderMonth(); });
+  function fillGradeFilter() {
+    const sel = $("mGrade"), cur = mFilter.grade, opts = [...sections(), WHOLE];
+    sel.replaceChildren(el("option", { value: "", text: "All grades and sections" }), ...opts.map((g) => el("option", { value: g, text: g })));
+    sel.value = opts.includes(cur) ? cur : ""; mFilter.grade = sel.value;
+  }
+  $("mGrade").addEventListener("change", (e) => { mFilter.grade = e.target.value; renderMonth(); });
+  $("prevMonth").addEventListener("click", () => { month = shiftMonth(month, -1); renderMonth(); });
+  $("nextMonth").addEventListener("click", () => { if (month < thisMonth()) { month = shiftMonth(month, 1); renderMonth(); } });
+  $("monthPick").addEventListener("change", (e) => { if (/^\d{4}-\d{2}$/.test(e.target.value)) { month = e.target.value > thisMonth() ? thisMonth() : e.target.value; renderMonth(); } });
+
+  function barChart(values, labels, fmt, color) {
+    const W = 560, H = 240, padL = 8, padR = 8, top = 26, bottom = 30;
+    const max = Math.max(...values, 0);
+    const n = values.length, slot = (W - padL - padR) / n, bw = Math.min(30, slot * 0.62);
+    const svg = [`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bar chart">`];
+    svg.push(`<line x1="${padL}" y1="${H - bottom}" x2="${W - padR}" y2="${H - bottom}" stroke="#C7CFDA" stroke-width="1"/>`);
+    values.forEach((v, i) => {
+      const x = padL + slot * i + (slot - bw) / 2;
+      const h = max > 0 ? (v / max) * (H - top - bottom) : 0;
+      const y = H - bottom - h;
+      if (v > 0) svg.push(`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(h, 1).toFixed(1)}" rx="2" fill="${color}"/>`);
+      if (v > 0) svg.push(`<text class="val" x="${(x + bw / 2).toFixed(1)}" y="${(y - 6).toFixed(1)}" text-anchor="middle" font-size="11">${fmt(v)}</text>`);
+      svg.push(`<text x="${(x + bw / 2).toFixed(1)}" y="${H - 10}" text-anchor="middle" font-size="12">${labels[i]}</text>`);
+    });
+    if (max === 0) svg.push(`<text x="${W / 2}" y="${H / 2}" text-anchor="middle" font-size="14">No records yet</text>`);
+    svg.push("</svg>");
+    return svg.join("");
+  }
+  const shortPeso = (v) => v >= 1000 ? "₱" + (v / 1000).toFixed(v >= 10000 ? 0 : 1) + "k" : "₱" + Math.round(v);
+
+  function renderYear() {
+    const opts = periodOptions();
+    if (!yearSel || !opts.includes(yearSel)) yearSel = opts.includes(currentSY()) ? currentSY() : opts[0];
+    const sel = $("yearPick");
+    sel.replaceChildren(...opts.map((o) => el("option", { value: o, text: periodOf(o).label })));
+    sel.value = yearSel;
+    const per = periodOf(yearSel);
+    $("yearNote").textContent = yearSel.startsWith("sy") ? "School year runs from June to May." : "January to December.";
+    const all = records.filter((c) => per.months.includes(String(c.date).slice(0, 7)));
+    const t = totals(all);
+    $("yPeople").textContent = t.people;
+    $("yHours").textContent = hnum(t.hours); $("yHoursSub").textContent = `from ${t.volunteers} volunteer${t.volunteers === 1 ? "" : "s"}`;
+    $("yMoney").textContent = peso(t.money); $("yMoneySub").textContent = `from ${t.donors} donor${t.donors === 1 ? "" : "s"}`;
+    $("yItems").textContent = t.things; $("yItemsSub").textContent = t.value > 0 ? `worth about ${peso(t.value)}` : "donations of materials";
+    const rows = per.months.map((m) => ({ m, t: totals(inMonth(m)) }));
+    const labels = per.months.map((m) => monthName(m, { month: "short" }));
+    $("chartMoney").innerHTML = barChart(rows.map((r) => r.t.money), labels, shortPeso, "#1F3A5F");
+    $("chartHours").innerHTML = barChart(rows.map((r) => r.t.hours), labels, (v) => hnum(v), "#2E6B4F");
+    const tm = thisMonth();
+    $("yRows").replaceChildren(...rows.map(({ m, t: r }) => el("tr", { class: m === tm ? "current" : null },
+      el("td", { text: monthName(m) + (m === tm ? " (this month)" : "") }),
+      el("td", { class: "num", text: r.people || "—" }),
+      el("td", { class: "num", text: r.hours ? hnum(r.hours) : "—" }),
+      el("td", { class: "num", text: r.money ? peso(r.money) : "—" }),
+      el("td", { class: "num", text: r.things || "—" }),
+      el("td", { class: "num", text: r.value ? peso(r.value) : "—" }),
+      el("td", { class: "num" }, m <= tm ? el("button", { class: "btn-link", type: "button", text: "Open", "aria-label": `Open ${monthName(m)}`, onclick: () => { month = m; setView("month", true); } }) : null)
+    )));
+    renderGrades(all);
+    $("yFoot").replaceChildren(el("tr", null,
+      el("td", { text: "Total" }), el("td", { class: "num", text: String(t.people) }), el("td", { class: "num", text: hnum(t.hours) }),
+      el("td", { class: "num", text: peso(t.money) }), el("td", { class: "num", text: String(t.things) }), el("td", { class: "num", text: t.value ? peso(t.value) : "—" }), el("td")));
+  }
+  function renderGrades(all) {
+    const groups = [...sections(), WHOLE, ""];
+    const rows = groups.map((g) => ({ g, t: totals(all.filter((c) => (c.gradeSection || "") === g)) })).filter((r) => r.g !== "" || r.t.people > 0);
+    $("gRows").replaceChildren(...rows.map(({ g, t }) => el("tr", null,
+      el("td", { text: g || "Not specified" }),
+      el("td", { class: "num", text: t.people || "—" }),
+      el("td", { class: "num", text: t.hours ? hnum(t.hours) : "—" }),
+      el("td", { class: "num", text: t.money ? peso(t.money) : "—" }),
+      el("td", { class: "num", text: t.things || "—" }),
+      el("td", { class: "num", text: t.value ? peso(t.value) : "—" }))));
+  }
+  $("yearPick").addEventListener("change", (e) => { yearSel = e.target.value; renderYear(); });
+
+  function renderPeople() {
+    const opts = periodOptions();
+    const sel = $("pYear"), cur = pFilter.year;
+    sel.replaceChildren(el("option", { value: "", text: "All years" }), ...opts.map((o) => el("option", { value: o, text: periodOf(o).label })));
+    sel.value = opts.includes(cur) ? cur : ""; pFilter.year = sel.value;
+    let list = records;
+    if (pFilter.year) { const ms = periodOf(pFilter.year).months; list = list.filter((c) => ms.includes(String(c.date).slice(0, 7))); }
+    let ppl = peopleOf(list);
+    if (pFilter.q) ppl = ppl.filter((p) => key(p.name).includes(pFilter.q));
+    $("pRows").replaceChildren(...ppl.map((p) => el("tr", null,
+      el("td", { class: "c-main" }, el("div", { class: "name", text: p.name })),
+      el("td", { class: "c-meta", "data-label": "Who they are", text: p.type || "—" }),
+      el("td", { class: "c-meta", "data-label": "Grade & section", text: p.grades.size ? [...p.grades].join(", ") : "—" }),
+      el("td", { class: "c-meta num", "data-label": "Times helped", text: String(p.times) }),
+      el("td", { class: "c-meta num", "data-label": "Hours", text: p.hours ? hnum(p.hours) : "—" }),
+      el("td", { class: "c-meta num", "data-label": "Money", text: p.money ? peso(p.money) : "—" }),
+      el("td", { class: "c-meta num", "data-label": "Things", text: p.things.length ? `${p.things.length} donation${p.things.length === 1 ? "" : "s"}` : "—" }),
+      el("td", { class: "c-meta", "data-label": "Last helped" }, el("button", { class: "btn-link", type: "button", text: fmtDate(p.last), "aria-label": `Open ${monthName(p.last.slice(0, 7))}`, onclick: () => { month = p.last.slice(0, 7); mFilter = { q: key(p.name), kind: "all", grade: "" }; $("mq").value = p.name; syncChips(); setView("month", true); } }))
+    )));
+    const empty = $("pEmpty");
+    empty.hidden = ppl.length > 0 || !loaded;
+    empty.replaceChildren(el("strong", { text: records.length ? "No names match your search" : "No volunteers or donors recorded yet" }));
+  }
+  $("pq").addEventListener("input", (e) => { pFilter.q = key(e.target.value); renderPeople(); });
+  $("pYear").addEventListener("change", (e) => { pFilter.year = e.target.value; renderPeople(); });
+
+  // ---------- record dialog ----------
+  let editingId = null, kind = "", delArmed = false;
+  function setKind(k) {
+    kind = k;
+    document.querySelectorAll(".kind").forEach((b) => b.setAttribute("aria-checked", String(b.dataset.kind === k)));
+    $("fDetails").hidden = !k; $("fMoney").hidden = k !== "money"; $("fHoursBox").hidden = k !== "hours"; $("fItems").hidden = k !== "items";
+    $("fDetailsTitle").textContent = k === "items" ? "3. What and how many?" : k === "hours" ? "3. How many hours?" : "3. How much?";
+  }
+  document.querySelectorAll(".kind").forEach((b) => b.addEventListener("click", () => {
+    setKind(b.dataset.kind);
+    const first = { money: "fAmount", hours: "fHours", items: "fItemDesc" }[b.dataset.kind];
+    ($("fName").value ? $(first) : $("fName")).focus();
+  }));
+  document.querySelectorAll(".qbtn").forEach((b) => b.addEventListener("click", () => { $("fHours").value = b.dataset.h; }));
+  $("fName").addEventListener("change", () => {
+    const same = records.filter((c) => key(c.name) === key($("fName").value));
+    const withType = same.find((c) => c.type), withGrade = same.find((c) => c.gradeSection);
+    if (!$("fType").value && withType) { const l = LEGACY_TYPES[withType.type] || withType.type; if (PARTNER_TYPES.some((t) => t.label === l)) { $("fType").value = l; updateTypeNote(); } }
+    if (!$("fGrade").value && withGrade) $("fGrade").value = withGrade.gradeSection;
+  });
+  $("fReceived").addEventListener("change", () => {
+    const g = sectionOfTeacher($("fReceived").value);
+    if (g && !$("fGrade").value) $("fGrade").value = g;
+  });
+  const opt = (v, t) => el("option", { value: v, text: t == null ? v : t });
+  function fillSpecific(type, keep) {
+    const ent = PDS.inKind.find((x) => x.type === type);
+    const items = ent && ent.specifics.length ? ent.specifics : [OTHERS];
+    $("fSpecific").replaceChildren(...items.map((x) => opt(x)));
+    $("fSpecific").value = items.includes(keep) ? keep : (items.includes(OTHERS) ? OTHERS : items[0]);
+  }
+  function updateTypeNote() {
+    const pt = partnerTypeOf($("fType").value);
+    $("fTypeNote").innerHTML = "";
+    if (pt) $("fTypeNote").append("Report category: ", el("b", { text: pt.specific ? `${pt.general} – ${pt.specific}` : `${pt.general}${pt.group ? " – " + pt.group : ""}` }));
+  }
+  function updateHourHint() {
+    const h = Number($("fHours").value) || 0, rate = hourRate();
+    $("fHourValue").placeholder = rate > 0 && h > 0 ? `Leave blank to use ${peso(h * rate)} (${hnum(h)} × ${peso(rate)})` : "Leave blank if not known";
+  }
+  $("fType").addEventListener("change", updateTypeNote);
+  $("fCType").addEventListener("change", () => fillSpecific($("fCType").value));
+  $("fHours").addEventListener("input", updateHourHint);
+  function fillLists() {
+    $("fType").replaceChildren(opt("", "Choose one"), ...PARTNER_TYPES.map((t) => opt(t.label)));
+    $("fWork").replaceChildren(...PDS.volunteer.map((x) => opt(x)));
+    $("fCType").replaceChildren(...PDS.inKind.map((x) => opt(x.type)));
+    $("fForm").replaceChildren(opt("", "None / not yet"), ...PDS.forms.map((x) => opt(x)));
+    $("fStatus").replaceChildren(...PDS.status.map((x) => opt(x)));
+    $("fInitiated").replaceChildren(...PDS.initiated.map((x) => opt(x)));
+    $("fNames").replaceChildren(...[...new Set(records.map((c) => c.name.trim()))].sort().map((n) => el("option", { value: n })));
+    $("fActivities").replaceChildren(...[...new Set([...DEFAULT_ACTIVITIES, ...records.map((c) => c.activity).filter(Boolean)])].sort().map((a) => el("option", { value: a })));
+    $("fGrade").replaceChildren(el("option", { value: "", text: "Choose a grade and section" }),
+      el("optgroup", { label: "Classes" }, ...sections().map((g) => el("option", { value: g, text: g }))),
+      el("optgroup", { label: "Other" }, el("option", { value: WHOLE, text: "Whole school (not for one class)" })));
+    $("fReceived").replaceChildren(el("option", { value: "", text: "Choose a teacher or staff" }),
+      ...["Teachers", "Administration", "Others"].map((g) => {
+        const ppl = staff.filter((p) => (p.group || "Others") === g);
+        return ppl.length ? el("optgroup", { label: g }, ...ppl.map((p) => el("option", { value: p.name, text: p.role ? `${p.name} — ${p.role}` : p.name }))) : null;
+      }).filter(Boolean));
+  }
+  function openDon(c) {
+    if (!canRecord) return;
+    fillLists();
+    editingId = c ? c.id : null;
+    $("donTitle").textContent = c ? "Change this record" : "Record a donation or volunteer";
+    $("donSub").textContent = c && c.recordedBy ? `Recorded by ${c.recordedBy}. Change the boxes, then press Save.` : "Fill in the boxes, then press Save.";
+    $("fName").value = c ? c.name : "";
+    const tlabel = c && c.type ? (LEGACY_TYPES[c.type] || c.type) : "";
+    if (tlabel && !PARTNER_TYPES.some((t) => t.label === tlabel)) $("fType").append(opt(tlabel));
+    $("fType").value = tlabel; updateTypeNote();
+    const defDate = month === thisMonth() ? today() : `${month}-01`;
+    $("fDate").value = c ? c.date : defDate;
+    $("fAmount").value = c && c.kind === "money" ? c.amount : "";
+    $("fHours").value = c && c.kind === "hours" ? c.hours : "";
+    $("fWork").value = c && c.kind === "hours" && PDS.volunteer.includes(c.specificContribution) ? c.specificContribution : "Ordinary Labor";
+    $("fHourValue").value = c && c.kind === "hours" && c.estValue != null ? c.estValue : "";
+    const ctype = c && c.kind === "items" && PDS.inKind.some((x) => x.type === c.contributionType) ? c.contributionType : OTHERS;
+    $("fCType").value = ctype; fillSpecific(ctype, c && c.kind === "items" ? c.specificContribution : "");
+    $("fContact").value = c ? (c.partnerContact || "") : "";
+    $("fLearners").value = c && c.beneficiaryLearners != null ? c.beneficiaryLearners : "";
+    $("fPersonnel").value = c && c.beneficiaryPersonnel != null ? c.beneficiaryPersonnel : "";
+    $("fForm").value = c ? (c.agreementForm || "") : "";
+    $("fStatus").value = c && c.projectStatus ? c.projectStatus : "Completed";
+    $("fInitiated").value = c && c.initiatedBy ? c.initiatedBy : "School";
+    $("fMore").open = !!(c && (c.partnerContact || c.beneficiaryLearners != null || c.beneficiaryPersonnel != null || c.agreementForm || (c.projectStatus && c.projectStatus !== "Completed") || (c.initiatedBy && c.initiatedBy !== "School")));
+    updateHourHint();
+    $("fItemDesc").value = c && c.kind === "items" ? c.itemDesc : "";
+    $("fItemQty").value = c && c.kind === "items" ? c.itemQty : "";
+    $("fItemUnit").value = c && c.kind === "items" && c.itemUnit ? c.itemUnit : "pcs";
+    $("fEstValue").value = c && c.kind === "items" && c.estValue != null ? c.estValue : "";
+    $("fActivity").value = c ? (c.activity || "") : "";
+    $("fReceived").value = c ? (c.receivedBy || "") : "";
+    if (c && c.receivedBy && $("fReceived").value !== c.receivedBy) { $("fReceived").append(el("option", { value: c.receivedBy, text: c.receivedBy })); $("fReceived").value = c.receivedBy; }
+    $("fRemarks").value = c ? (c.remarks || "") : "";
+    $("fGrade").value = c ? (c.gradeSection || "") : (mFilter.grade || "");
+    if (c && c.gradeSection && $("fGrade").value !== c.gradeSection) { $("fGrade").append(el("option", { value: c.gradeSection, text: c.gradeSection })); $("fGrade").value = c.gradeSection; }
+    setKind(c ? c.kind : "");
+    $("fErr").hidden = true; delArmed = false;
+    $("fDelete").hidden = !(c && isAdmin); $("fDelete").textContent = "Delete record"; $("fDelete").classList.remove("armed");
+    $("donOverlay").hidden = false; $("donOverlay").querySelector(".dialog").scrollTop = 0;
+    setTimeout(() => (c ? $("fName") : document.querySelector(".kind")).focus(), 30);
+  }
+  function closeDon() { $("donOverlay").hidden = true; editingId = null; }
+  $("addBtn").addEventListener("click", () => openDon(null));
+  $("fCancel").addEventListener("click", closeDon);
+  $("donOverlay").addEventListener("click", (e) => { if (e.target === $("donOverlay")) closeDon(); });
+  $("donForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const err = (m, f) => { $("fErr").textContent = m; $("fErr").hidden = false; if (f) $(f).focus(); };
+    if (!kind) return err("Please choose what was given: Money, Volunteer time, or Things.");
+    const body = { kind, date: $("fDate").value, name: $("fName").value.trim(), type: $("fType").value,
+      amount: $("fAmount").value, hours: $("fHours").value, itemDesc: $("fItemDesc").value.trim(), itemQty: $("fItemQty").value,
+      itemUnit: $("fItemUnit").value, estValue: $("fEstValue").value, activity: $("fActivity").value.trim(), receivedBy: $("fReceived").value, remarks: $("fRemarks").value.trim(),
+      gradeSection: $("fGrade").value,
+      partnerContact: $("fContact").value.trim(), beneficiaryLearners: $("fLearners").value, beneficiaryPersonnel: $("fPersonnel").value,
+      agreementForm: $("fForm").value, projectStatus: $("fStatus").value, initiatedBy: $("fInitiated").value };
+    if (kind === "hours") {
+      body.specificContribution = $("fWork").value;
+      const hv = $("fHourValue").value.trim();
+      body.estValue = hv !== "" ? hv : (hourRate() > 0 && Number(body.hours) > 0 ? String(Math.round(Number(body.hours) * hourRate() * 100) / 100) : "");
+    }
+    if (kind === "items") { body.contributionType = $("fCType").value; body.specificContribution = $("fSpecific").value; }
+    const n = (v) => Number(String(v).replace(/[,\s₱]/g, ""));
+    if (!body.name) return err("Please type the name of the volunteer or donor.", "fName");
+    if (!body.date) return err("Please enter the date.", "fDate");
+    if (body.date > today()) return err("The date cannot be in the future.", "fDate");
+    if (kind === "money" && !(n(body.amount) > 0)) return err("Please type the amount in pesos, for example 1500.", "fAmount");
+    if (kind === "hours" && !(n(body.hours) > 0)) return err("Please type the number of hours, or press one of the quick choices.", "fHours");
+    if (kind === "items" && !body.itemDesc) return err("Please describe what was donated.", "fItemDesc");
+    if (kind === "items" && !(n(body.itemQty) > 0)) return err("Please type how many were donated.", "fItemQty");
+    if (kind === "items" && body.estValue !== "" && !(n(body.estValue) >= 0)) return err("The estimated value must be a number, or leave it blank.", "fEstValue");
+    if (kind === "hours" && body.estValue !== "" && !(n(body.estValue) >= 0)) return err("The value must be a number, or leave it blank.", "fHourValue");
+    $("fSave").disabled = true;
+    try {
+      if (editingId) await api("contributions/" + encodeURIComponent(editingId), { method: "PUT", body });
+      else await api("contributions", { method: "POST", body });
+      const was = editingId;
+      month = body.date.slice(0, 7);
+      await refresh(); closeDon();
+      toast(was ? "Record updated." : `Saved. Thank you, ${body.name}!`);
+    } catch (ex) { if (ex.status === 401) { closeDon(); logout("Your session has ended. Please log in again."); } else err(ex.message); }
+    finally { $("fSave").disabled = false; }
+  });
+  $("fDelete").addEventListener("click", async () => {
+    if (!editingId) return;
+    if (!delArmed) { delArmed = true; $("fDelete").classList.add("armed"); $("fDelete").textContent = "Press again to delete"; return; }
+    try { await api("contributions/" + encodeURIComponent(editingId), { method: "DELETE", body: {} }); await refresh(); closeDon(); toast("Record deleted."); }
+    catch (ex) { $("fErr").textContent = ex.message; $("fErr").hidden = false; }
+  });
+
+  // ---------- PDS mapping ----------
+  const OTHERS = "Others (specify in remarks)";
+  // "Who are they?" choices and how each maps to the PDS partner type.
+  const PARTNER_TYPES = [
+    { label: "Parent or guardian", general: OTHERS, specific: "", group: "Parents/Guardian" },
+    { label: "Teacher or school staff", general: OTHERS, specific: "", group: "Teachers" },
+    { label: "Alumni", general: OTHERS, specific: "", group: "Alumni" },
+    { label: "Private individual", general: "Private Sector", specific: "Private Individual" },
+    { label: "Business or private company", general: "Private Sector", specific: "Private Company" },
+    { label: "Corporate foundation", general: "Private Sector", specific: "Corporate Foundation" },
+    { label: "Barangay (LGU)", general: "Public Sector", specific: "LGU-Barangay: Local Funds" },
+    { label: "Municipality (LGU)", general: "Public Sector", specific: "LGU-Municipality: Local Funds" },
+    { label: "Province (LGU)", general: "Public Sector", specific: "LGU-Province: Local Funds" },
+    { label: "National government agency", general: "Public Sector", specific: "National Government Agency" },
+    { label: "Non-government organization", general: "Civil Society Organization", specific: "Non-Government Organizations" },
+    { label: "Faith-based organization", general: "Civil Society Organization", specific: "Faith-Based Organizations" },
+    { label: "People's organization or association", general: "Civil Society Organization", specific: "People’s Organizations" },
+    { label: "Cooperative", general: "Civil Society Organization", specific: "Cooperatives" },
+    { label: "Other", general: OTHERS, specific: "", remark: "Other partner" }
+  ];
+  const LEGACY_TYPES = { "Business": "Business or private company", "Barangay or LGU": "Barangay (LGU)", "Organization or group": "Non-government organization" };
+  const partnerTypeOf = (label) => PARTNER_TYPES.find((t) => t.label === (LEGACY_TYPES[label] || label)) || null;
+  let reportInfo = {};
+  const hourRate = () => Number(reportInfo.hourValue) || 0;
+  const valueOf = (c) => c.kind === "money" ? Number(c.amount) || 0
+    : c.kind === "hours" ? (c.estValue != null ? Number(c.estValue) : (Number(c.hours) || 0) * hourRate())
+    : Number(c.estValue) || 0;
+
+  function pdsRow(c) {
+    const pt = partnerTypeOf(c.type);
+    const general = pt ? pt.general : OTHERS;
+    const partnerName = pt && pt.group ? pt.group : c.name.trim();
+    const partnerRemark = general === OTHERS ? (pt ? (pt.group || pt.remark || "") : (c.type || "Other partner")) : "";
+    let type, typeRemark = "", specific, specificRemark = "", unit, qty;
+    if (c.kind === "money") { type = "Financial_Support"; specific = "-"; unit = "Peso"; qty = Number(c.amount) || 0; }
+    else if (c.kind === "hours") {
+      type = "Volunteer_Hours"; specific = c.specificContribution || OTHERS;
+      if (specific === OTHERS) specificRemark = c.activity || "Volunteer work";
+      unit = "Hours"; qty = Number(c.hours) || 0;
+    } else {
+      type = c.contributionType || OTHERS; if (type === OTHERS) typeRemark = "In-kind Donations";
+      specific = c.specificContribution || OTHERS; if (specific === OTHERS) specificRemark = c.itemDesc || "";
+      unit = c.itemUnit || "pcs"; qty = Number(c.itemQty) || 0;
+    }
+    return { general, specificPartner: pt ? pt.specific : "", partnerRemark, partnerName, collective: !!(pt && pt.group),
+      type, typeRemark, specific, specificRemark, unit, qty, value: valueOf(c) };
+  }
+
+  function consolidate(list) {
+    const map = new Map();
+    for (const c of list) {
+      const r = pdsRow(c);
+      const k = [r.general, r.specificPartner, r.partnerRemark, r.partnerName.toLowerCase(), r.type, r.typeRemark, r.specific, r.specificRemark.toLowerCase(), r.unit].join("|");
+      let g = map.get(k);
+      if (!g) { g = { ...r, qty: 0, value: 0, count: 0, contacts: new Set(), learners: null, personnel: null, forms: new Set(), cats: new Set(), projects: new Set(), status: new Set(), initiated: new Set() }; map.set(k, g); }
+      g.qty += r.qty; g.value += r.value; g.count++;
+      if (!r.collective && c.partnerContact) g.contacts.add(c.partnerContact);
+      if (c.beneficiaryLearners != null) g.learners = Math.max(g.learners || 0, c.beneficiaryLearners);
+      if (c.beneficiaryPersonnel != null) g.personnel = Math.max(g.personnel || 0, c.beneficiaryPersonnel);
+      if (c.agreementForm) g.forms.add(c.agreementForm);
+      g.cats.add(/brigada/i.test(c.activity || "") ? "Brigada Eskwela" : "Other Category");
+      if (c.activity) g.projects.add(c.activity);
+      g.status.add(c.projectStatus || "Completed");
+      g.initiated.add(c.initiatedBy || "School");
+    }
+    const order = (g) => (g.general === OTHERS ? 1 : 0);
+    return [...map.values()].sort((a, b) => order(a) - order(b) || a.partnerName.localeCompare(b.partnerName) || a.type.localeCompare(b.type));
+  }
+
+  // ---------- periods for the report ----------
+  function reportPeriods() {
+    const ms = new Set(records.map((c) => String(c.date).slice(0, 7))); ms.add(thisMonth()); ms.add(month);
+    const months = [...ms].filter((m) => /^\d{4}-\d{2}$/.test(m)).sort().reverse();
+    const years = [...new Set(months.map((m) => m.slice(0, 4)))];
+    return { months, years };
+  }
+  function periodRecords(p) {
+    if (p.startsWith("Y:")) return records.filter((c) => String(c.date).startsWith(p.slice(2)));
+    return records.filter((c) => String(c.date).slice(0, 7) === p);
+  }
+  const periodLabel = (p) => p.startsWith("Y:") ? `Whole Fiscal Year ${p.slice(2)}` : monthName(p);
+
+  // ---------- report dialog ----------
+  const RI = { riRegion: "region", riDivision: "division", riOffering: "offering", riSchool: "schoolName", riSchoolId: "schoolId",
+    riHour: "hourValue", riPrep: "preparedBy", riPrepPos: "preparedPosition", riPrepCon: "preparedContact", riAppr: "approvedBy",
+    riApprPos: "approvedPosition", riApprCon: "approvedContact", riLearners: "learners", riPersonnel: "personnel" };
+  function openReport() {
+    const { months, years } = reportPeriods();
+    const sel = $("repPeriod");
+    sel.replaceChildren(el("optgroup", { label: "Monthly report" }, ...months.map((m) => el("option", { value: m, text: monthName(m) }))),
+      el("optgroup", { label: "Whole year" }, ...years.map((y) => el("option", { value: "Y:" + y, text: `Whole Fiscal Year ${y}` }))));
+    sel.value = month;
+    for (const [id, k] of Object.entries(RI)) { $(id).value = reportInfo[k] != null && reportInfo[k] !== 0 ? reportInfo[k] : (k === "learners" || k === "personnel" ? (reportInfo[k] ?? "") : ""); $(id).disabled = !isAdmin; }
+    $("riActions").hidden = !isAdmin;
+    $("riNote").textContent = isAdmin ? "These details print at the top of the report. Beneficiary numbers are used for every row unless a record has its own numbers."
+      : "Only the admin can change these details.";
+    $("repErr").hidden = true;
+    renderReportPreview();
+    $("repOverlay").hidden = false;
+    setTimeout(() => sel.focus(), 30);
+  }
+  function currentInfo() {
+    const o = { ...reportInfo };
+    for (const [id, k] of Object.entries(RI)) o[k] = $(id).value.trim();
+    o.learners = o.learners === "" ? 0 : Number(o.learners); o.personnel = o.personnel === "" ? 0 : Number(o.personnel);
+    o.hourValue = Number(String(o.hourValue).replace(/[,\s₱]/g, "")) || 0;
+    return o;
+  }
+  function renderReportPreview() {
+    const p = $("repPeriod").value || month;
+    const saved = reportInfo; reportInfo = currentInfo();
+    const rows = consolidate(periodRecords(p));
+    reportInfo = saved;
+    const total = rows.reduce((s, r) => s + r.value, 0), n = rows.reduce((s, r) => s + r.count, 0);
+    $("repSummary").textContent = rows.length
+      ? `${periodLabel(p)}: ${n} record${n === 1 ? "" : "s"} consolidated into ${rows.length} row${rows.length === 1 ? "" : "s"}, total value ${peso(total)}.`
+      : `${periodLabel(p)}: no records yet. The report will have the header only.`;
+    $("repRows").replaceChildren(...rows.map((r) => el("tr", null,
+      el("td", { class: "name", text: r.partnerName }),
+      el("td", { text: r.specificPartner ? `${r.general} – ${r.specificPartner}` : r.general }),
+      el("td", { text: r.type + (r.typeRemark ? ` (${r.typeRemark})` : "") }),
+      el("td", { text: r.specific + (r.specificRemark ? ` (${r.specificRemark})` : "") }),
+      el("td", { text: r.unit }),
+      el("td", { class: "num", text: r.qty.toLocaleString("en-PH", { maximumFractionDigits: 2 }) }),
+      el("td", { class: "num", text: peso(r.value).slice(1) }),
+      el("td", { class: "num", text: String(r.count) }))));
+  }
+  $("repPeriod").addEventListener("change", renderReportPreview);
+  ["riHour", "riLearners", "riPersonnel"].forEach((id) => $(id).addEventListener("input", renderReportPreview));
+  $("reportBtn").addEventListener("click", openReport);
+  $("repClose").addEventListener("click", () => { $("repOverlay").hidden = true; });
+  $("repOverlay").addEventListener("click", (e) => { if (e.target === $("repOverlay")) $("repOverlay").hidden = true; });
+  $("riSave").addEventListener("click", async () => {
+    $("riSave").disabled = true;
+    try {
+      const d = await api("report-info", { method: "PUT", body: currentInfo() });
+      reportInfo = d.reportInfo; updateFacts(); renderReportPreview(); toast("Report details saved.");
+    } catch (ex) { $("repErr").textContent = ex.message; $("repErr").hidden = false; }
+    finally { $("riSave").disabled = false; }
+  });
+  function updateFacts() {
+    const r = reportInfo || {};
+    const region = String(r.region || "").replace(/^Region_?/, "Region ").replace(/_/g, " ").replace(/\s*Bicol Region$/, " \u2013 Bicol").replace(/\s+/g, " ");
+    $("factsLine").textContent = [r.schoolId && `School ID ${r.schoolId}`, region.trim(), r.division && `Division of ${r.division}`, "Casiguran, Sorsogon"].filter(Boolean).join(" · ");
+  }
+
+  // ---------- Excel (follows the School Partnerships Data Sheet layout) ----------
+  let excelLib = null;
+  function loadExcel() {
+    if (window.ExcelJS) return Promise.resolve(window.ExcelJS);
+    if (excelLib) return excelLib;
+    excelLib = new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js";
+      s.onload = () => resolve(window.ExcelJS);
+      s.onerror = () => { excelLib = null; reject(new Error("Couldn't load the Excel tool. Check your internet connection and try again.")); };
+      document.head.append(s);
+    });
+    return excelLib;
+  }
+  async function buildWorkbook(p, info) {
+    const ExcelJS = await loadExcel();
+    const saved = reportInfo; reportInfo = info;
+    const list = periodRecords(p).sort((a, b) => String(a.date).localeCompare(String(b.date)));
+    const rows = consolidate(list);
+    reportInfo = saved;
+    const wb = new ExcelJS.Workbook();
+    wb.creator = info.preparedBy || "School"; wb.created = new Date();
+    const ws = wb.addWorksheet("Sheet1", { views: [{ state: "frozen", ySplit: 15 }] });
+    const F = { name: "Arial", size: 10 };
+    const GRAY = "FFE7E6E6", HEAD1 = "FFD8D8D8", HEAD2 = "FF4472C4", HEAD3 = "FF9CC2E5", YELLOW = "FFFFFF00";
+    const fill = (argb) => ({ type: "pattern", pattern: "solid", fgColor: { argb } });
+    const thin = { style: "thin", color: { argb: "FF808080" } };
+    const box = { top: thin, left: thin, bottom: thin, right: thin };
+    const set = (addr, value, o = {}) => {
+      const c = ws.getCell(addr); c.value = value;
+      c.font = { ...F, bold: !!o.bold, color: o.color ? { argb: o.color } : undefined };
+      if (o.fill) c.fill = fill(o.fill);
+      c.alignment = { horizontal: o.align || "left", vertical: "middle", wrapText: !!o.wrap };
+      if (o.numFmt) c.numFmt = o.numFmt;
+      if (o.border) c.border = box;
+      return c;
+    };
+    const widths = [24, 22, 18, 26, 16, 20, 22, 16, 24, 18, 11, 14, 18, 13, 13, 20, 18, 18, 15, 15, 17, 26, 15, 24, 18];
+    widths.forEach((w, i) => { ws.getColumn(i + 1).width = w; });
+    const isYear = p.startsWith("Y:");
+    const year = isYear ? Number(p.slice(2)) : Number(p.slice(0, 4));
+    const monthText = isYear ? "January–December" : new Date(year, Number(p.slice(5, 7)) - 1, 1).toLocaleDateString("en-US", { month: "long" });
+    ws.mergeCells("A1:X1"); set("A1", "Department of Education", { align: "center" });
+    ws.mergeCells("A2:X2"); set("A2", "SCHOOL PARTNERSHIPS DATA SHEET", { align: "center", bold: true });
+    set("A3", "Fiscal Year:", { bold: true }); set("B3", year, { bold: true, fill: GRAY, align: "center" });
+    set("A4", "Month:", { bold: true }); set("B4", monthText, { bold: true, fill: GRAY, align: "center" });
+    const left = [["Region:", info.region], ["Division:", info.division], ["School/LC Name:", info.schoolName], ["School ID", /^\d+$/.test(String(info.schoolId)) ? Number(info.schoolId) : info.schoolId], ["Offering:", info.offering]];
+    left.forEach(([label, v], i) => { const r = 5 + i; set("A" + r, label, { bold: true }); ws.mergeCells(`B${r}:F${r}`); set("B" + r, v || "", { align: "left" }); });
+    const now = new Date(); const today = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+    const right = [["Prepared by:", info.preparedBy, "Approved by:", info.approvedBy], ["Position/Designation:", info.preparedPosition, "Position/Designation:", info.approvedPosition],
+      ["Contact No.", info.preparedContact, "Contact No.", info.approvedContact], ["Date:", today, "Date:", null]];
+    right.forEach(([l1, v1, l2, v2], i) => {
+      const r = 6 + i;
+      set("L" + r, l1, { bold: true }); ws.mergeCells(`N${r}:T${r}`); set("N" + r, v1 || "", { fill: GRAY, numFmt: i === 3 ? "dd-mmm-yy" : undefined, align: "left" });
+      set("V" + r, l2, { bold: true }); ws.mergeCells(`X${r}:Y${r}`); set("X" + r, v2 || "", { fill: GRAY, numFmt: i === 3 ? "dd-mmm-yy" : undefined, align: "left" });
+    });
+    ws.mergeCells("A12:X12");
+    set("Y13", "Select from drop down list. If the information is not in the drop down list, indicate in the \"Remarks\" column the needed information.", { fill: YELLOW, align: "center", wrap: true });
+    ws.getRow(13).height = 54;
+    ws.mergeCells("A14:F14"); set("A14", "SCHOOL/LEARNING CENTER PARTNERS", { bold: true, fill: HEAD1, align: "center", border: true });
+    ws.mergeCells("G14:O14"); set("G14", "PARTNERS' CONTRIBUTIONS", { bold: true, fill: HEAD2, align: "center", border: true, color: "FFFFFFFF" });
+    ws.mergeCells("P14:Y14"); set("P14", "PARTNERSHIP AGREEMENTS", { bold: true, fill: HEAD3, align: "center", border: true });
+    const heads = ["General Partner Type", "Specific Partner Type", "Remarks", "Partner Name", "Remarks", "Partner Contact Details",
+      "Contribution Type", "Remarks", "Specific Contribution Type", "Remarks", "Unit of Contribution", "Quantity Contributed",
+      "Actual Amount/Value of Contribution\n(in Pesos)", "No. of Beneficiary Learners", "No. of Beneficiary Personnel",
+      "Form of Agreement", "Signatory Name", "Signatory Designation", "Agreement Start Date (dd/mm/yyyy)", "Agreement End Date (dd/mm/yyyy)",
+      "Project Category", "Project Name", "Status of Agreement/ Project", "Remarks", "Initiated by"];
+    heads.forEach((h, i) => {
+      const col = String.fromCharCode(65 + i);
+      set(col + "15", h, { bold: true, align: "center", wrap: true, border: true, fill: i < 6 ? HEAD1 : i < 15 ? HEAD2 : HEAD3, color: i >= 6 && i < 15 ? "FFFFFFFF" : undefined });
+    });
+    ws.getRow(15).height = 48;
+    const join = (s) => [...s].filter(Boolean).join("; ");
+    rows.forEach((g, i) => {
+      const r = 16 + i;
+      const vals = [g.general, g.specificPartner, g.partnerRemark, g.partnerName, "", g.contacts.size ? join(g.contacts) : "N/A",
+        g.type, g.typeRemark, g.specific, g.specificRemark, g.unit, g.qty, Math.round(g.value * 100) / 100,
+        g.learners != null ? g.learners : (info.learners || ""), g.personnel != null ? g.personnel : (info.personnel || ""),
+        join(g.forms), "", "", "", "", join(g.cats), join(g.projects), join(g.status), `Consolidated from ${g.count} record${g.count === 1 ? "" : "s"}`, join(g.initiated)];
+      vals.forEach((v, j) => {
+        const col = String.fromCharCode(65 + j);
+        set(col + r, v === "" ? null : v, { border: true, wrap: j !== 11 && j !== 12, align: j >= 11 && j <= 14 ? "right" : "left",
+          numFmt: j === 11 || j === 12 ? (g.unit === "Hours" || j === 12 ? "#,##0.00" : "#,##0") : undefined });
+      });
+    });
+
+    // Second sheet: every individual record behind the consolidated rows.
+    const wd = wb.addWorksheet("Details");
+    [12, 26, 24, 22, 16, 30, 28, 10, 12, 16, 22, 24, 30].forEach((w, i) => { wd.getColumn(i + 1).width = w; });
+    wd.mergeCells("A1:M1"); wd.getCell("A1").value = `${info.schoolName || "School"} – Details of donations and volunteers`;
+    wd.getCell("A1").font = { ...F, size: 12, bold: true };
+    wd.mergeCells("A2:M2"); wd.getCell("A2").value = periodLabel(p); wd.getCell("A2").font = { ...F, bold: true };
+    const dh = ["Date", "Name", "Who they are", "Grade and section", "Given", "Contribution type", "Specific type / item", "Unit", "Quantity", "Value (PHP)", "Activity / Project", "Received by", "Notes"];
+    dh.forEach((h, i) => { const c = wd.getCell(4, i + 1); c.value = h; c.font = { ...F, bold: true }; c.fill = fill(HEAD1); c.border = box; c.alignment = { horizontal: "center", vertical: "middle", wrapText: true }; });
+    let tv = 0;
+    list.forEach((c, i) => {
+      const r = pdsRow(c); tv += r.value;
+      const [y, m, d] = String(c.date).split("-").map(Number);
+      const vals = [new Date(Date.UTC(y, m - 1, d)), c.name, c.type || "", c.gradeSection || "", { money: "Money", hours: "Volunteer time", items: "Things" }[c.kind],
+        r.type + (r.typeRemark ? ` (${r.typeRemark})` : ""), c.kind === "items" ? `${r.specific === OTHERS ? "" : r.specific + " – "}${c.itemDesc}` : r.specific,
+        r.unit, r.qty, Math.round(r.value * 100) / 100, c.activity || "", c.receivedBy || "", c.remarks || ""];
+      vals.forEach((v, j) => {
+        const cell = wd.getCell(5 + i, j + 1); cell.value = v; cell.font = F; cell.border = box;
+        cell.alignment = { vertical: "top", wrapText: j !== 0 && j !== 8 && j !== 9 };
+        if (j === 0) cell.numFmt = "dd-mmm-yy"; if (j === 8 || j === 9) cell.numFmt = "#,##0.00";
+      });
+    });
+    const tr = 5 + list.length;
+    wd.getCell(tr, 9).value = "Total"; wd.getCell(tr, 9).font = { ...F, bold: true };
+    wd.getCell(tr, 10).value = Math.round(tv * 100) / 100; wd.getCell(tr, 10).numFmt = "#,##0.00"; wd.getCell(tr, 10).font = { ...F, bold: true };
+    return wb;
+  }
+  $("repDownload").addEventListener("click", async () => {
+    const p = $("repPeriod").value || month;
+    if (window.__DEMO__) { toast("In the demo, downloading is turned off. On the live site this saves the Excel report."); return; }
+    $("repDownload").disabled = true; $("repDownload").textContent = "Preparing the Excel file…"; $("repErr").hidden = true;
+    try {
+      const info = currentInfo();
+      const wb = await buildWorkbook(p, info);
+      const buf = await wb.xlsx.writeBuffer();
+      const blob = new Blob([buf], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `PDS-Consolidation-${info.schoolId || "school"}-${p.startsWith("Y:") ? "FY" + p.slice(2) : p}.xlsx`;
+      document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+      toast("Excel report downloaded.");
+    } catch (ex) { $("repErr").textContent = ex.message || "Couldn't make the Excel file."; $("repErr").hidden = false; }
+    finally { $("repDownload").disabled = false; $("repDownload").textContent = "Download Excel report"; }
+  });
+
+  // ---------- export & print ----------
+  function saveFile(name, text) {
+    if (window.__DEMO__) { toast("In the demo, Export is turned off. On the live site it saves a CSV file for Excel."); return false; }
+    const blob = new Blob(["﻿" + text], { type: "text/csv;charset=utf-8" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+    return true;
+  }
+  $("exportBtn").addEventListener("click", () => {
+    const esc = (v) => { const s = String(v == null ? "" : v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+    let list, name;
+    if (view === "year") { const ms = periodOf(yearSel).months; list = records.filter((c) => ms.includes(String(c.date).slice(0, 7))); name = `donations-${periodOf(yearSel).label.replace(/\W+/g, "-").toLowerCase()}.csv`; }
+    else if (view === "people" && pFilter.year) { const ms = periodOf(pFilter.year).months; list = records.filter((c) => ms.includes(String(c.date).slice(0, 7))); name = `donations-${pFilter.year.replace(":", "-")}.csv`; }
+    else if (view === "people") { list = records.slice(); name = "donations-all.csv"; }
+    else { list = inMonth(month).filter((c) => !mFilter.grade || (c.gradeSection || "") === mFilter.grade); name = `donations-${month}${mFilter.grade ? "-" + mFilter.grade.replace(/\W+/g, "-").toLowerCase() : ""}.csv`; }
+    list.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+    const cols = ["Date", "Name", "Who they are", "Grade and section", "Given", "Amount (PHP)", "Hours", "Things donated", "Quantity", "Unit", "Estimated value (PHP)", "Activity", "Received by", "Notes"];
+    const rows = list.map((c) => [c.date, c.name, c.type, c.gradeSection || "", KIND_NAME[c.kind], c.kind === "money" ? c.amount : "", c.kind === "hours" ? c.hours : "",
+      c.kind === "items" ? c.itemDesc : "", c.kind === "items" ? c.itemQty : "", c.kind === "items" ? c.itemUnit : "", c.estValue != null ? c.estValue : "", c.activity, c.receivedBy, c.remarks]);
+    if (saveFile(name, [cols.join(",")].concat(rows.map((r) => r.map(esc).join(","))).join("\r\n"))) toast("Exported.");
+  });
+  $("printBtn").addEventListener("click", () => {
+    if (window.__DEMO__) { toast("In the demo, Print is turned off. On the live site it prints this report."); return; }
+    if (view === "people") setView("month", true);
+    window.print();
+  });
+
+  // ---------- text size ----------
+  const SIZES = { normal: 1, large: 1.15, xlarge: 1.3 };
+  function setTextSize(s) {
+    if (!SIZES[s]) s = "normal";
+    document.body.style.zoom = SIZES[s] === 1 ? "" : String(SIZES[s]);
+    document.querySelectorAll(".textsize button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.size === s)));
+    try { localStorage.setItem("tm-don-text-size", s); } catch (e) { /* ignore */ }
+  }
+  document.querySelectorAll(".textsize button").forEach((b) => b.addEventListener("click", () => setTextSize(b.dataset.size)));
+  try { setTextSize(localStorage.getItem("tm-don-text-size") || "normal"); } catch (e) { setTextSize("normal"); }
+
+  // ---------- login / accounts ----------
+  const ROLE_NAME = { admin: "Admin", teacher: "Teacher", viewer: "Viewer" };
+  let acctInfo = { admin: false, teacher: false, viewer: false };
+  const pickRole = (v) => (["admin", "teacher", "viewer"].includes(v) ? v : "viewer");
+  const displayName = (u) => (u && (u.name || u.username)) || "";
+  function lock(locked) {
+    document.body.classList.toggle("locked", locked);
+    if (locked) ["donOverlay", "accOverlay", "repOverlay"].forEach((id) => { $(id).hidden = true; });
+    window.scrollTo(0, 0);
+  }
+  lock(true);
+  function showForm(id) { ["loginForm", "setupForm"].forEach((f) => { $(f).hidden = f !== id; }); }
+  function gate(state, note) {
+    const msg = $("gateMsg");
+    if (state === "loading") { msg.textContent = "Loading…"; showForm(null); return; }
+    if (state === "error") { msg.textContent = note; showForm(null); return; }
+    if (state === "setup") { msg.textContent = note || "Create the Admin account to start."; $("sErr").hidden = true; showForm("setupForm"); setTimeout(() => $("sCode").focus(), 30); return; }
+    msg.textContent = note || "Choose Admin, Teacher, or Viewer, then enter your username and password.";
+    $("lErr").hidden = true; $("lPass").value = ""; showForm("loginForm");
+    setTimeout(() => ($("lUser").value ? $("lPass") : $("lUser")).focus(), 30);
+  }
+  async function loadMe() { const me = await api("me"); acctInfo = me.accounts || acctInfo; return me; }
+  async function refresh() {
+    const d = await api("data");
+    records = d.contributions || []; staff = d.staff || []; loaded = true;
+    reportInfo = d.reportInfo || {}; updateFacts();
+    render();
+  }
+  function showWho(user) {
+    const nm = displayName(user);
+    $("whoName").textContent = nm; $("whoInitial").textContent = (nm || "?").charAt(0).toUpperCase();
+    $("roleBadge").textContent = ROLE_NAME[user.role]; $("roleBadge").className = "role " + user.role;
+  }
+  async function enter(user) {
+    session = user; isAdmin = user.role === "admin"; canRecord = isAdmin || user.role === "teacher";
+    showWho(user);
+    $("who").hidden = false; $("accountsBtn").hidden = !isAdmin; $("addBtn").hidden = !canRecord;
+    lock(false);
+    setView(location.hash.slice(1), false);
+    try { await refresh(); } catch (e) { if (e.status === 401) logout(); else toast(e.message); }
+  }
+  function logout(note) {
+    session = null; canRecord = false; isAdmin = false; records = []; loaded = false;
+    api("logout", { method: "POST", body: {} }).catch(() => {});
+    $("who").hidden = true; $("accountsBtn").hidden = true; $("addBtn").hidden = true;
+    lock(true); gate("login", note || "You have logged out.");
+  }
+  $("logoutBtn").addEventListener("click", () => logout());
+  setInterval(() => { if (session && !document.hidden && $("donOverlay").hidden) refresh().catch(() => {}); }, 60000);
+
+  $("lShow").addEventListener("change", () => { $("lPass").type = $("lShow").checked ? "text" : "password"; });
+  $("sShow").addEventListener("change", () => { $("sPass").type = $("sShow").checked ? "text" : "password"; });
+  $("aShow").addEventListener("change", () => { $("aPass").type = $("aShow").checked ? "text" : "password"; });
+  $("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const err = (m) => { $("lErr").textContent = m; $("lErr").hidden = false; };
+    const role = pickRole($("lRole").value), username = $("lUser").value.trim(), password = $("lPass").value;
+    if (!username || !password) return err("Please enter your username and password.");
+    $("lBtn").disabled = true;
+    try { const d = await api("login", { method: "POST", body: { role, username, password } }); await loadMe(); await enter(d.user); toast(`Welcome, ${displayName(d.user)}.`); }
+    catch (ex) { $("lPass").value = ""; $("lPass").focus(); err(ex.message); }
+    finally { $("lBtn").disabled = false; }
+  });
+  $("setupForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const err = (m, f) => { $("sErr").textContent = m; $("sErr").hidden = false; if (f) $(f).focus(); };
+    const setupCode = $("sCode").value.trim(), username = $("sUser").value.trim(), password = $("sPass").value;
+    if (!setupCode) return err("Please enter the setup code.", "sCode");
+    if (!username) return err("Please enter a username.", "sUser");
+    if (password.length < 6) return err("The password needs at least 6 characters.", "sPass");
+    $("sBtn").disabled = true;
+    try { const d = await api("setup", { method: "POST", body: { setupCode, username, password } }); await loadMe(); await enter(d.user); toast("Admin account created. Add each teacher's login from Teachers & logins."); }
+    catch (ex) { err(ex.message); } finally { $("sBtn").disabled = false; }
+  });
+
+  // Teachers & logins (admin only)
+  let accounts = [], accEdit = null, accRole = "teacher", accUserTouched = false, accRemoveArmed = false;
+  const OTHER = "__other__";
+  function suggestUsername(name) {
+    const words = String(name || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ñ/gi, "n")
+      .split(/\s+/).map((w) => w.toLowerCase().replace(/[^a-z]/g, "")).filter(Boolean);
+    const full = words.filter((w) => w.length > 1);
+    if (!full.length) return "";
+    const base = full.length > 1 ? `${full[0]}.${full[full.length - 1]}` : full[0];
+    const taken = (u) => accounts.some((a) => a.username.toLowerCase() === u && (!accEdit || a.id !== accEdit.id));
+    let u = base, n = 2;
+    while (taken(u)) u = base + n++;
+    return u;
+  }
+  const staffSection = (name) => { const p = staff.find((x) => x.name === name); return p ? p.role : ""; };
+  function renderAccounts() {
+    const rows = accounts.map((a) => {
+      const nm = a.name || (a.role === "admin" ? "Admin" : "");
+      const sec = a.role === "teacher" ? staffSection(a.name) : a.role === "admin" ? "Manages logins and all records" : "Can look, print and export only";
+      return el("tr", {},
+        el("td", { class: "who-col" }, el("b", { text: nm || "(no name yet)" }), sec ? el("span", { text: sec }) : null),
+        el("td", {}, el("span", { class: "acc-type " + a.role, text: ROLE_NAME[a.role] })),
+        el("td", {}, el("span", { class: "uname", text: a.username })),
+        el("td", { class: "acts" }, el("button", { type: "button", class: "btn btn-sm", text: a.role === "admin" ? "Change my login" : "Change", "aria-label": `Change the login for ${nm || a.username}`, onclick: () => openAccForm(a) })));
+    });
+    $("accRows").replaceChildren(...(rows.length ? rows : [el("tr", {}, el("td", { colspan: "4", class: "empty", text: "No logins yet." }))]));
+    const have = new Set(accounts.filter((a) => a.role === "teacher").map((a) => (a.name || "").toLowerCase()));
+    const missing = staff.filter((p) => (p.group || "") === "Teachers" && !have.has(p.name.toLowerCase()));
+    $("accMissing").hidden = !missing.length;
+    $("accMissing").textContent = missing.length ? `${missing.length} teacher${missing.length === 1 ? " doesn't" : "s don't"} have a login yet: ${missing.map((p) => p.name).join(", ")}.` : "";
+  }
+  function showAccList() {
+    $("accForm").hidden = true; $("accListPane").hidden = false;
+    $("accTitle").textContent = "Teachers & logins";
+    $("accSub").textContent = "Each teacher has their own username and password. Tell each teacher their login in person.";
+    renderAccounts();
+  }
+  function fillWho(current) {
+    const have = new Set(accounts.filter((a) => a.role === "teacher" && (!accEdit || a.id !== accEdit.id)).map((a) => (a.name || "").toLowerCase()));
+    const groups = ["Teachers", "Administration", "Others"];
+    const sel = $("aWho");
+    sel.replaceChildren(el("option", { value: "", text: "Choose the teacher…" }),
+      ...groups.map((g) => {
+        const ppl = staff.filter((p) => (p.group || "Others") === g && !have.has(p.name.toLowerCase()));
+        return ppl.length ? el("optgroup", { label: g }, ...ppl.map((p) => el("option", { value: p.name, text: p.role ? `${p.name} (${p.role})` : p.name }))) : null;
+      }).filter(Boolean),
+      el("option", { value: OTHER, text: "Someone else (type the name)" }));
+    const inList = current && staff.some((p) => p.name === current && !have.has(p.name.toLowerCase()));
+    sel.value = !current ? "" : inList ? current : OTHER;
+    $("aName").value = current && !inList ? current : "";
+  }
+  function syncWho() {
+    const other = $("aWho").value === OTHER;
+    $("aNameField").hidden = accRole === "teacher" && !other;
+    if (accRole === "teacher" && !accUserTouched) $("aUser").value = suggestUsername(other ? $("aName").value : $("aWho").value);
+  }
+  function openAccForm(a, role) {
+    accEdit = a || null; accRole = a ? a.role : role; accUserTouched = !!a; accRemoveArmed = false;
+    $("accListPane").hidden = true; $("accForm").hidden = false; $("aErr").hidden = true;
+    $("aShow").checked = false; $("aPass").type = "password"; $("aPass").value = "";
+    const isT = accRole === "teacher", isV = accRole === "viewer", isA = accRole === "admin";
+    $("accTitle").textContent = a ? (isA ? "Change my admin login" : `Change login: ${a.name || a.username}`) : isT ? "Add a teacher login" : "Add a viewer login";
+    $("accSub").textContent = isT ? "The teacher uses this to log in as Teacher and record donations and volunteers."
+      : isV ? "A viewer can look at records, print and export, but can't add or change anything."
+      : "This is the login you use as Admin.";
+    $("aWhoField").hidden = !isT;
+    if (isT) fillWho(a ? a.name : "");
+    $("aNameLabel").textContent = isT ? "Teacher's full name" : isV ? "Name (for example, the principal)" : "Your name (shown at the top of the page)";
+    if (!isT) $("aName").value = a ? a.name || "" : "";
+    $("aUser").value = a ? a.username : "";
+    $("aPassLabel").textContent = a ? "New password" : "Password";
+    $("aPass").placeholder = a ? "Leave blank to keep the current password" : "At least 6 characters";
+    $("aSave").textContent = a ? "Save changes" : isT ? "Create teacher login" : "Create viewer login";
+    $("aRemove").hidden = !a || isA; $("aRemove").textContent = "Remove this login"; $("aRemove").classList.remove("armed");
+    syncWho();
+    setTimeout(() => (isT && !a ? $("aWho") : !isT && !a ? $("aName") : $("aPass")).focus(), 30);
+  }
+  $("aWho").addEventListener("change", () => { syncWho(); if ($("aWho").value === OTHER) $("aName").focus(); });
+  $("aName").addEventListener("input", () => { if (!accUserTouched && accRole !== "admin") $("aUser").value = suggestUsername($("aName").value); });
+  $("aUser").addEventListener("input", () => { accUserTouched = true; });
+  async function loadAccounts() { const d = await api("accounts"); accounts = d.accounts || []; }
+  $("accountsBtn").addEventListener("click", async () => {
+    try { await loadAccounts(); } catch (e) { if (e.status === 401) return logout(); return toast(e.message); }
+    showAccList(); $("accOverlay").hidden = false; setTimeout(() => $("accAddTeacher").focus(), 30);
+  });
+  $("accAddTeacher").addEventListener("click", () => openAccForm(null, "teacher"));
+  $("accAddViewer").addEventListener("click", () => openAccForm(null, "viewer"));
+  $("accClose").addEventListener("click", () => { $("accOverlay").hidden = true; });
+  $("aBack").addEventListener("click", showAccList);
+  $("accOverlay").addEventListener("click", (e) => { if (e.target === $("accOverlay")) $("accOverlay").hidden = true; });
+  $("accForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const err = (m, f) => { $("aErr").textContent = m; $("aErr").hidden = false; if (f) $(f).focus(); };
+    const isT = accRole === "teacher";
+    const who = $("aWho").value;
+    if (isT && !who) return err("Choose the teacher from the list.", "aWho");
+    const name = isT ? (who === OTHER ? $("aName").value.trim() : who) : $("aName").value.trim();
+    if (isT && !name) return err("Type the teacher's full name.", "aName");
+    const username = $("aUser").value.trim(), password = $("aPass").value;
+    if (!username) return err("Please enter a username.", "aUser");
+    if (/\s/.test(username)) return err("Usernames can't have spaces. Use a dot instead, for example leny.giba", "aUser");
+    if (!accEdit && password.length < 6) return err("The password needs at least 6 characters.", "aPass");
+    if (password && password.length < 6) return err("The new password needs at least 6 characters.", "aPass");
+    $("aSave").disabled = true;
+    try {
+      const d = accEdit
+        ? await api(`accounts/${accEdit.id}`, { method: "PUT", body: { name, username, password } })
+        : await api("accounts", { method: "POST", body: { role: accRole, name, username, password } });
+      accounts = d.accounts || accounts;
+      if (d.user) { session = Object.assign({}, session, d.user); showWho(session); }
+      await loadMe().catch(() => {});
+      const nm = name || username;
+      toast(!accEdit ? `Login created for ${nm}. Username: ${username}`
+        : password || username !== accEdit.username ? `Login saved for ${nm}. ${accEdit.id === (session && session.id) ? "" : "They must log in again with the new details."}`.trim()
+        : `Saved ${nm}.`);
+      showAccList();
+    } catch (ex) { if (ex.status === 401) { $("accOverlay").hidden = true; logout(); } else err(ex.message); }
+    finally { $("aSave").disabled = false; }
+  });
+  $("aRemove").addEventListener("click", async () => {
+    if (!accEdit) return;
+    if (!accRemoveArmed) { accRemoveArmed = true; $("aRemove").classList.add("armed"); $("aRemove").textContent = "Press again to remove"; return; }
+    $("aRemove").disabled = true;
+    try {
+      const d = await api(`accounts/${accEdit.id}`, { method: "DELETE" });
+      accounts = d.accounts || accounts; await loadMe().catch(() => {});
+      toast(`Removed the login for ${accEdit.name || accEdit.username}. Their past records stay.`);
+      showAccList();
+    } catch (ex) { if (ex.status === 401) { $("accOverlay").hidden = true; logout(); } else { $("aErr").textContent = ex.message; $("aErr").hidden = false; } }
+    finally { $("aRemove").disabled = false; }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!$("donOverlay").hidden) closeDon();
+    if (!$("accOverlay").hidden) $("accOverlay").hidden = true;
+    if (!$("repOverlay").hidden) $("repOverlay").hidden = true;
+  });
+
+  // ---------- start ----------
+  gate("loading");
+  (async () => {
+    let me;
+    try { me = await loadMe(); } catch (e) { gate("error", "The record can't load right now. Check your internet connection, then reload the page."); return; }
+    if (me.user) { await enter(me.user); return; }
+    if (!me.accounts.admin) {
+      if (me.setupCodeConfigured) gate("setup");
+      else gate("error", "Almost ready: add a SETUP_CODE environment variable in Netlify, redeploy, then reload this page.");
+      return;
+    }
+    gate("login");
+  })();
+})();
+</script>
+</body>
+</html>
