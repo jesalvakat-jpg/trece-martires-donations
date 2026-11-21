@@ -334,11 +334,11 @@ tr.current td:first-child { font-weight: 700; }
         <div><dt>Division</dt><dd>Sorsogon</dd></div>
         <div><dt>Offering</dt><dd>Elementary</dd></div>
       </dl>
-      <p class="gate-about">A monthly record of the money, volunteer time, and things that parents, alumni, and partners give to the school, ready for the School Partnerships Data Sheet.</p>
+      <p class="gate-about">A monthly record of the money, volunteer time, and supplies and materials that parents, alumni, and partners give to the school, ready for the School Partnerships Data Sheet.</p>
       <ul class="gate-kinds" aria-label="What is recorded">
         <li><b>Money</b><span>Financial support</span></li>
         <li><b>Volunteer time</b><span>Hours of help</span></li>
-        <li><b>Things</b><span>In-kind donations</span></li>
+        <li><b>Supplies &amp; materials</b><span>In-kind donations</span></li>
       </ul>
     </aside>
     <div class="gate-card">
@@ -397,7 +397,7 @@ tr.current td:first-child { font-weight: 700; }
       </nav>
     </div>
   </div>
-  <div class="toolbar">
+  <div class="toolbar" id="adminTools" hidden>
     <div class="wrap toolbar-inner">
       <button class="btn btn-gold" id="reportBtn" type="button">Consolidation report (Excel)</button>
       <button class="btn" id="printBtn" type="button">Print monthly report</button>
@@ -426,7 +426,7 @@ tr.current td:first-child { font-weight: 700; }
       <div class="tile"><div class="k">People who helped</div><div class="v" id="mPeople">0</div><div class="s" id="mPeopleSub"></div><div class="cmp" id="mPeopleCmp"></div></div>
       <div class="tile"><div class="k">Volunteer hours</div><div class="v" id="mHours">0</div><div class="s" id="mHoursSub"></div><div class="cmp" id="mHoursCmp"></div></div>
       <div class="tile"><div class="k">Money received</div><div class="v" id="mMoney">₱0.00</div><div class="s" id="mMoneySub"></div><div class="cmp" id="mMoneyCmp"></div></div>
-      <div class="tile"><div class="k">Things donated</div><div class="v" id="mItems">0</div><div class="s" id="mItemsSub"></div><div class="cmp" id="mItemsCmp"></div></div>
+      <div class="tile"><div class="k">Supplies &amp; materials</div><div class="v" id="mItems">0</div><div class="s" id="mItemsSub"></div><div class="cmp" id="mItemsCmp"></div></div>
     </section>
 
     <section class="filters" aria-label="Filters">
@@ -436,7 +436,7 @@ tr.current td:first-child { font-weight: 700; }
         <button class="chip" type="button" data-kind="all" aria-pressed="true">All</button>
         <button class="chip" type="button" data-kind="money" aria-pressed="false">Money</button>
         <button class="chip" type="button" data-kind="hours" aria-pressed="false">Volunteer time</button>
-        <button class="chip" type="button" data-kind="items" aria-pressed="false">Things</button>
+        <button class="chip" type="button" data-kind="items" aria-pressed="false">Supplies &amp; materials</button>
       </div>
     </section>
 
@@ -452,7 +452,7 @@ tr.current td:first-child { font-weight: 700; }
     <h3 class="section-title" id="whoTitle">Who helped this month</h3>
     <section class="register cards" aria-label="Who helped this month">
       <table>
-        <thead><tr><th>Name</th><th>Who they are</th><th>Grade &amp; section</th><th class="num">Hours</th><th class="num">Money</th><th>Things</th></tr></thead>
+        <thead><tr><th>Name</th><th>Who they are</th><th>Grade &amp; section</th><th class="num">Hours</th><th class="num">Money</th><th>Supplies &amp; materials</th></tr></thead>
         <tbody id="mPeopleRows"></tbody>
       </table>
       <div class="empty" id="mPeopleEmpty" hidden></div>
@@ -469,7 +469,7 @@ tr.current td:first-child { font-weight: 700; }
       <div class="tile"><div class="k">People who helped</div><div class="v" id="yPeople">0</div><div class="s">different volunteers and donors</div></div>
       <div class="tile"><div class="k">Volunteer hours</div><div class="v" id="yHours">0</div><div class="s" id="yHoursSub"></div></div>
       <div class="tile"><div class="k">Money received</div><div class="v" id="yMoney">₱0.00</div><div class="s" id="yMoneySub"></div></div>
-      <div class="tile"><div class="k">Things donated</div><div class="v" id="yItems">0</div><div class="s" id="yItemsSub"></div></div>
+      <div class="tile"><div class="k">Supplies &amp; materials</div><div class="v" id="yItems">0</div><div class="s" id="yItemsSub"></div></div>
     </section>
     <div class="charts">
       <div class="chart"><h3>Money received per month</h3><div id="chartMoney"></div></div>
@@ -478,7 +478,7 @@ tr.current td:first-child { font-weight: 700; }
     <h3 class="section-title">Month by month</h3>
     <section class="register" aria-label="Month by month">
       <table>
-        <thead><tr><th>Month</th><th class="num">People</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Things</th><th class="num">Value of things</th><th></th></tr></thead>
+        <thead><tr><th>Month</th><th class="num">People</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Supplies &amp; materials</th><th class="num">Value of supplies</th><th></th></tr></thead>
         <tbody id="yRows"></tbody>
         <tfoot id="yFoot"></tfoot>
       </table>
@@ -486,7 +486,7 @@ tr.current td:first-child { font-weight: 700; }
     <h3 class="section-title">By grade and section</h3>
     <section class="register" aria-label="By grade and section">
       <table>
-        <thead><tr><th>Grade &amp; section</th><th class="num">People</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Things</th><th class="num">Value of things</th></tr></thead>
+        <thead><tr><th>Grade &amp; section</th><th class="num">People</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Supplies &amp; materials</th><th class="num">Value of supplies</th></tr></thead>
         <tbody id="gRows"></tbody>
       </table>
     </section>
@@ -500,7 +500,7 @@ tr.current td:first-child { font-weight: 700; }
     </section>
     <section class="register cards" aria-label="Volunteers and donors">
       <table>
-        <thead><tr><th>Name</th><th>Who they are</th><th>Grade &amp; section</th><th class="num">Times helped</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Things</th><th>Last helped</th></tr></thead>
+        <thead><tr><th>Name</th><th>Who they are</th><th>Grade &amp; section</th><th class="num">Times helped</th><th class="num">Hours</th><th class="num">Money</th><th class="num">Supplies &amp; materials</th><th>Last helped</th></tr></thead>
         <tbody id="pRows"></tbody>
       </table>
       <div class="empty" id="pEmpty" hidden></div>
@@ -519,7 +519,7 @@ tr.current td:first-child { font-weight: 700; }
         <div class="kinds" role="radiogroup" aria-label="What was given">
           <button type="button" class="kind" data-kind="money" role="radio" aria-checked="false"><b>Money</b><span>Cash given, in pesos</span></button>
           <button type="button" class="kind" data-kind="hours" role="radio" aria-checked="false"><b>Volunteer time</b><span>Hours of help</span></button>
-          <button type="button" class="kind" data-kind="items" role="radio" aria-checked="false"><b>Things</b><span>Materials, supplies or equipment</span></button>
+          <button type="button" class="kind" data-kind="items" role="radio" aria-checked="false"><b>Supplies and materials</b><span>School supplies, materials or equipment</span></button>
         </div>
       </fieldset>
       <fieldset class="step">
@@ -703,7 +703,7 @@ tr.current td:first-child { font-weight: 700; }
 
   // ---------- state ----------
   const PDS = {"inKind": [{"type": "Appliances", "specifics": ["Airconditioning Units", "CCTV", "DRR Equipment", "Electric Fans", "Microwave", "Television", "Wall/Alarm Clock", "Gardening Tools", "Gas Stove", "Glassware", "Kitchen ware", "Oven", "Radio System", "Science Laboratory Equipment", "Solar Panels", "Sound System", "Sports Equipment", "Sprinkler", "Others (specify in remarks)"]}, {"type": "Disaster Prevention and Emergency Kits", "specifics": ["Fire Extinguishers", "Emergency Lights", "Hard Caps", "Whistle with Lace", "Personal Protective supplies (facemask, shield, hand gloves, eye googles, PPEs, etc.)", "Go Bags", "DRR Equipment", "Fire Alarm", "Fire Hose", "Thermal/ Temperature Scanner", "First Aid/Emergency Kits", "Medical Consultation", "Food items and Food Supplements", "Medical Services Supplies and Equipment", "Others (specify in remarks)"]}, {"type": "Disinfection and Cleaning Supplies and Equipment", "specifics": ["Hand Sanitizers", "Alcohol", "Disinfectants", "Anti-Bacterial or Germicidal Soaps", "Cleaning Equipment", "Personal hygiene", "Misting Machine", "Foot Bath", "Others (specify in remarks)"]}, {"type": "Furniture", "specifics": ["Armchairs", "Blackboard", "Desks", "Door", "Monoblock Chairs", "Shelves/Cabinets", "Sofa/Sala sets", "Tables", "Teachers' Chair", "Teachers' Table", "Window/Panels", "Others (specify in remarks)"]}, {"type": "ICT Equipment and Technology", "specifics": ["Computer Peripherals", "Computers", "DVD Player", "DVD/CD", "Earphone/Headphone", "E-Books", "E-channel Subscription", "Fax Machine", "Flashdrive", "Internet Connectivity", "Ipad/Tablets", "Laptops", "LCD Projector", "Photocopier", "Printer", "Scanner", "Software", "Telephone Line", "Monitors", "Interactive Whiteboard", "White Screen", "Solar Panels", "Electricity", "Car batteries", "Generator", "Premium membership in remote working tools (Zoom, MS teams, etc.)", "Prepaid load card (Call text and data)", "Hard drive and USB storage", "Risograph/Duplo Machine", "Voice Recorder", "Others (specify in remarks)"]}, {"type": "Infrastructure", "specifics": ["New Classroom Construction", "Classroom Repair", "New Comfort Room Construction", "Comfort Room Repair", "Hardware/Construction Materials", "New Laboratory Construction", "Laboratory Repair", "New Library Construction", "Library Repair", "New Handwashing Facility Construction", "Handwashing Facilitity Repair", "New Covered Court Construction", "Covered Court Repair", "New Stage Construction", "Stage Repair", "New Pathwalk Construction", "Pathwalk Repair", "Construction of Fence and Gate", "Fence and Gate Repair", "Water System Provision", "Water System Repair", "Electrical Facilities Provision", "Electrical Facilities Repair", "Construction of Sports Facilities", "Repair of Sports Facilities", "Construction of School Signage", "School signage repair", "Land/Real Property Donation", "Paint and Painting supplies", "Installation of Flag Pole and Flags", "Installation of Watch Tower", "Other New Construction (specify in remarks)", "Others (specify in remarks)"]}, {"type": "Learner’s school supplies and uniforms", "specifics": ["Bags", "Bicycles", "Boats", "Books", "Copy Papers", "Footwear", "Lamps", "Leaflets", "Learning Modules", "Reference Materials", "School supplies", "Uniform", "Others (specify in remarks)"]}, {"type": "Learner’s wellness, health and nutrition", "specifics": ["Assistive Devices", "Dental services", "Eyeglasses", "Feeding Program", "Medical check-up", "Medicine", "Personal Hygiene", "Physcial Fitness Activities", "Rubber Mat", "Seedlings/Saplings", "Seeds", "Sports Clinic", "Vitamins", "Others (specify in remarks)"]}, {"type": "Printed and Electronic Learning Materials", "specifics": ["Self-Learning Modules (SLM)/ Electronic and printed", "Printed Learning Materials (Textbook, Activity Sheets, Study Guides, references materials)", "Reproduction and Distribution of Printed Materials", "Others (specify in remarks)"]}, {"type": "Transportation Support", "specifics": ["Bicycles", "Boat", "Bus", "Car", "Jeepney", "Motorcycles", "Pick-up", "Vans", "Logistics and Delivery", "Transportation Allowance", "Others (specify in remarks)"]}, {"type": "Others (specify in remarks)", "specifics": []}], "volunteer": ["Brigada Pagbasa", "Carpentry", "Electrical/Electronics", "Landscaping/Gardening", "Masonry", "Ordinary Labor", "Painting", "Plumbing", "Professional services (Medical/Legal/etc.)", "Tutorial learning sessions for online learnings", "Others (specify in remarks)"], "forms": ["Memorandum of Agreement", "Memorandum of Understanding", "Deed of Donation", "Usufruct", "Acknowledgment Receipt", "No signed Agreement", "Others (specify in remarks)"], "status": ["Completed", "On-going", "For implementation", "Pending", "Others (specify in remarks)"], "initiated": ["Central Office", "Regional Office", "Schools Division Office", "School"]};
-  const KIND_NAME = { money: "Money", hours: "Volunteer time", items: "Things" };
+  const KIND_NAME = { money: "Money", hours: "Volunteer time", items: "Supplies and materials" };
   const DEFAULT_ACTIVITIES = ["Brigada Eskwela", "Feeding Program", "Gulayan sa Paaralan", "School Clean-up", "Christmas Program", "Graduation / Moving Up", "Sports Fest", "Classroom Repair"];
   let records = [], staff = [], loaded = false;
   let session = null, canRecord = false, isAdmin = false;
@@ -790,7 +790,7 @@ tr.current td:first-child { font-weight: 700; }
   function renderNotice() {
     const n = $("notice");
     if (!session) { n.hidden = true; return; }
-    n.textContent = session.role === "viewer" ? "You are viewing as a Viewer. You can look at all records. Only teachers and the admin can add records."
+    n.textContent = session.role === "viewer" ? "You are viewing as a Viewer. You can look at all records. Only teachers and the admin can add records, and only the admin can print and export."
       : session.role === "teacher" ? "You are logged in as Teacher. You can record and correct donations. Only the admin can delete records." : "";
     n.hidden = !n.textContent;
   }
@@ -853,7 +853,7 @@ tr.current td:first-child { font-weight: 700; }
       el("td", { class: "c-meta", "data-label": "Grade & section", text: p.grades.size ? [...p.grades].join(", ") : "—" }),
       el("td", { class: "c-meta num", "data-label": "Hours", text: p.hours ? hnum(p.hours) : "—" }),
       el("td", { class: "c-meta num", "data-label": "Money", text: p.money ? peso(p.money) : "—" }),
-      el("td", { class: "c-meta", "data-label": "Things", text: p.things.length ? p.things.join("; ") : "—" })
+      el("td", { class: "c-meta", "data-label": "Supplies and materials", text: p.things.length ? p.things.join("; ") : "—" })
     )));
     $("mPeopleEmpty").hidden = ppl.length > 0 || !loaded;
     $("mPeopleEmpty").replaceChildren(el("strong", { text: "No one recorded yet this month" }));
@@ -953,7 +953,7 @@ tr.current td:first-child { font-weight: 700; }
       el("td", { class: "c-meta num", "data-label": "Times helped", text: String(p.times) }),
       el("td", { class: "c-meta num", "data-label": "Hours", text: p.hours ? hnum(p.hours) : "—" }),
       el("td", { class: "c-meta num", "data-label": "Money", text: p.money ? peso(p.money) : "—" }),
-      el("td", { class: "c-meta num", "data-label": "Things", text: p.things.length ? `${p.things.length} donation${p.things.length === 1 ? "" : "s"}` : "—" }),
+      el("td", { class: "c-meta num", "data-label": "Supplies and materials", text: p.things.length ? `${p.things.length} donation${p.things.length === 1 ? "" : "s"}` : "—" }),
       el("td", { class: "c-meta", "data-label": "Last helped" }, el("button", { class: "btn-link", type: "button", text: fmtDate(p.last), "aria-label": `Open ${monthName(p.last.slice(0, 7))}`, onclick: () => { month = p.last.slice(0, 7); mFilter = { q: key(p.name), kind: "all", grade: "" }; $("mq").value = p.name; syncChips(); setView("month", true); } }))
     )));
     const empty = $("pEmpty");
@@ -1073,7 +1073,7 @@ tr.current td:first-child { font-weight: 700; }
   $("donForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const err = (m, f) => { $("fErr").textContent = m; $("fErr").hidden = false; if (f) $(f).focus(); };
-    if (!kind) return err("Please choose what was given: Money, Volunteer time, or Things.");
+    if (!kind) return err("Please choose what was given: Money, Volunteer time, or Supplies and materials.");
     const body = { kind, date: $("fDate").value, name: $("fName").value.trim(), type: $("fType").value,
       amount: $("fAmount").value, hours: $("fHours").value, itemDesc: $("fItemDesc").value.trim(), itemQty: $("fItemQty").value,
       itemUnit: $("fItemUnit").value, estValue: $("fEstValue").value, activity: $("fActivity").value.trim(), receivedBy: $("fReceived").value, remarks: $("fRemarks").value.trim(),
@@ -1243,7 +1243,7 @@ tr.current td:first-child { font-weight: 700; }
   }
   $("repPeriod").addEventListener("change", renderReportPreview);
   ["riHour", "riLearners", "riPersonnel"].forEach((id) => $(id).addEventListener("input", renderReportPreview));
-  $("reportBtn").addEventListener("click", openReport);
+  $("reportBtn").addEventListener("click", () => { if (isAdmin) openReport(); });
   $("repClose").addEventListener("click", () => { $("repOverlay").hidden = true; });
   $("repOverlay").addEventListener("click", (e) => { if (e.target === $("repOverlay")) $("repOverlay").hidden = true; });
   $("riSave").addEventListener("click", async () => {
@@ -1358,7 +1358,7 @@ tr.current td:first-child { font-weight: 700; }
     list.forEach((c, i) => {
       const r = pdsRow(c); tv += r.value;
       const [y, m, d] = String(c.date).split("-").map(Number);
-      const vals = [new Date(Date.UTC(y, m - 1, d)), c.name, c.type || "", c.gradeSection || "", { money: "Money", hours: "Volunteer time", items: "Things" }[c.kind],
+      const vals = [new Date(Date.UTC(y, m - 1, d)), c.name, c.type || "", c.gradeSection || "", { money: "Money", hours: "Volunteer time", items: "Supplies and materials" }[c.kind],
         r.type + (r.typeRemark ? ` (${r.typeRemark})` : ""), c.kind === "items" ? `${r.specific === OTHERS ? "" : r.specific + " – "}${c.itemDesc}` : r.specific,
         r.unit, r.qty, Math.round(r.value * 100) / 100, c.activity || "", c.receivedBy || "", c.remarks || ""];
       vals.forEach((v, j) => {
@@ -1406,12 +1406,13 @@ tr.current td:first-child { font-weight: 700; }
     else if (view === "people") { list = records.slice(); name = "donations-all.csv"; }
     else { list = inMonth(month).filter((c) => !mFilter.grade || (c.gradeSection || "") === mFilter.grade); name = `donations-${month}${mFilter.grade ? "-" + mFilter.grade.replace(/\W+/g, "-").toLowerCase() : ""}.csv`; }
     list.sort((a, b) => String(a.date).localeCompare(String(b.date)));
-    const cols = ["Date", "Name", "Who they are", "Grade and section", "Given", "Amount (PHP)", "Hours", "Things donated", "Quantity", "Unit", "Estimated value (PHP)", "Activity", "Received by", "Notes"];
+    const cols = ["Date", "Name", "Who they are", "Grade and section", "Given", "Amount (PHP)", "Hours", "Supplies and materials donated", "Quantity", "Unit", "Estimated value (PHP)", "Activity", "Received by", "Notes"];
     const rows = list.map((c) => [c.date, c.name, c.type, c.gradeSection || "", KIND_NAME[c.kind], c.kind === "money" ? c.amount : "", c.kind === "hours" ? c.hours : "",
       c.kind === "items" ? c.itemDesc : "", c.kind === "items" ? c.itemQty : "", c.kind === "items" ? c.itemUnit : "", c.estValue != null ? c.estValue : "", c.activity, c.receivedBy, c.remarks]);
     if (saveFile(name, [cols.join(",")].concat(rows.map((r) => r.map(esc).join(","))).join("\r\n"))) toast("Exported.");
   });
   $("printBtn").addEventListener("click", () => {
+    if (!isAdmin) return;
     if (window.__DEMO__) { toast("In the demo, Print is turned off. On the live site it prints this report."); return; }
     if (view === "people") setView("month", true);
     window.print();
@@ -1464,7 +1465,7 @@ tr.current td:first-child { font-weight: 700; }
   async function enter(user) {
     session = user; isAdmin = user.role === "admin"; canRecord = isAdmin || user.role === "teacher";
     showWho(user);
-    $("who").hidden = false; $("accountsBtn").hidden = !isAdmin; $("addBtn").hidden = !canRecord;
+    $("who").hidden = false; $("adminTools").hidden = !isAdmin; $("accountsBtn").hidden = !isAdmin; $("addBtn").hidden = !canRecord;
     lock(false);
     setView(location.hash.slice(1), false);
     try { await refresh(); } catch (e) { if (e.status === 401) logout(); else toast(e.message); }
@@ -1472,7 +1473,7 @@ tr.current td:first-child { font-weight: 700; }
   function logout(note) {
     session = null; canRecord = false; isAdmin = false; records = []; loaded = false;
     api("logout", { method: "POST", body: {} }).catch(() => {});
-    $("who").hidden = true; $("accountsBtn").hidden = true; $("addBtn").hidden = true;
+    $("who").hidden = true; $("adminTools").hidden = true; $("accountsBtn").hidden = true; $("addBtn").hidden = true;
     lock(true); gate("login", note || "You have logged out.");
   }
   $("logoutBtn").addEventListener("click", () => logout());
@@ -1521,7 +1522,7 @@ tr.current td:first-child { font-weight: 700; }
   function renderAccounts() {
     const rows = accounts.map((a) => {
       const nm = a.name || (a.role === "admin" ? "Admin" : "");
-      const sec = a.role === "teacher" ? staffSection(a.name) : a.role === "admin" ? "Manages logins and all records" : "Can look, print and export only";
+      const sec = a.role === "teacher" ? staffSection(a.name) : a.role === "admin" ? "Manages logins and all records" : "Can look at records only";
       return el("tr", {},
         el("td", { class: "who-col" }, el("b", { text: nm || "(no name yet)" }), sec ? el("span", { text: sec }) : null),
         el("td", {}, el("span", { class: "acc-type " + a.role, text: ROLE_NAME[a.role] })),
@@ -1566,7 +1567,7 @@ tr.current td:first-child { font-weight: 700; }
     const isT = accRole === "teacher", isV = accRole === "viewer", isA = accRole === "admin";
     $("accTitle").textContent = a ? (isA ? "Change my admin login" : `Change login: ${a.name || a.username}`) : isT ? "Add a teacher login" : "Add a viewer login";
     $("accSub").textContent = isT ? "The teacher uses this to log in as Teacher and record donations and volunteers."
-      : isV ? "A viewer can look at records, print and export, but can't add or change anything."
+      : isV ? "A viewer can look at records, but can't add, change, print or export anything."
       : "This is the login you use as Admin.";
     $("aWhoField").hidden = !isT;
     if (isT) fillWho(a ? a.name : "");
