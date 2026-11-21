@@ -149,7 +149,7 @@ async function getReportInfo() {
 
 function cleanContribution(b) {
   const kind = KINDS.includes(b.kind) ? b.kind : null;
-  if (!kind) fail(400, "Choose Money, Volunteer time, or Things.");
+  if (!kind) fail(400, "Choose Money, Volunteer time, or Supplies and materials.");
   const date = dateStr(b.date);
   if (!date) fail(400, "Enter the date.");
   const name = str(b.name, 120);
@@ -179,7 +179,7 @@ function cleanContribution(b) {
     out.est_value = hv;
   } else {
     out.item_desc = str(b.itemDesc, 200);
-    if (!out.item_desc) fail(400, "Describe the things donated.");
+    if (!out.item_desc) fail(400, "Describe the supplies or materials donated.");
     const qn = num(b.itemQty, { max: 1e7, decimals: 0 });
     if (!(qn > 0)) fail(400, "Enter how many were donated.");
     out.item_qty = qn;
